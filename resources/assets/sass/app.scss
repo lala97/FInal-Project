@@ -1,0 +1,23 @@
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "vendors/bootstrap/bootstrap";
+@import "vendors/fontawesome/font-awesome";
+@import 'https://fonts.googleapis.com/css?family=Titillium+Web:400,700&subset=latin-ext';
+@import "commonClasses";
+@import "mediaQueries";
+@import "partials/destek_ol";
+@import "partials/elaqe";
+@import "partials/haqqimizda";
+@import "partials/index";
+@import "partials/istek_elave_et";
+@import "partials/navbar";
+@import "partials/map";
+@import "partials/news";
+@import "partials/footer";
+@import "partials/sual";
+@import "partials/profilim";
+@import "partials/ehtiyacim";
+
+body {
+    font-weight: 400;
+    font-size: 14px;
+}
