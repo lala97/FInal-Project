@@ -1,5 +1,8 @@
-@extends('layout')
+@extends('pages/layout')
 
+@section('title')
+   İstək
+@endsection
 @section('content')
 
   <section id="istek">

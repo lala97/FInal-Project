@@ -1,5 +1,8 @@
-@extends('layout')
+@extends('pages/layout')
 
+@section('title')
+   Ana səhifə
+@endsection
 @section('content')
   <!-- SEARCHBAR SECTION START -->
   <section id="searchbar">
