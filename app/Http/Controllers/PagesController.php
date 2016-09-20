@@ -9,18 +9,18 @@ use App\Http\Requests;
 class PagesController extends Controller
 {
     public function istek(){
-      return view('istek');
+      return view('pages.istek');
     }
 
     public function destek(){
-      return view('destek');
+      return view('pages.destek');
     }
 
     public function haqqimizda(){
-      return view('haqqimizda');
+      return view('pages.haqqimizda');
     }
 
     public function elaqe(){
-      return view('elaqe');
+      return view('pages.elaqe');
     }
 }
