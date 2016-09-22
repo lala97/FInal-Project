@@ -85,7 +85,7 @@
 <script src="scripts/vendors/jquery.js"></script>
 <script src="scripts/vendors/bootstrap.min.js"></script>
 <script src="scripts/vendors/modernizr.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initAutocomplete"async defer></script>
-<script src="scripts/main.js"></script>
+{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initAutocomplete"async defer></script>
+<script src="scripts/main.js"></script> --}}
 </body>
 </html>

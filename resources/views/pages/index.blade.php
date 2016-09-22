@@ -33,7 +33,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12 padding0">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26081603.29442044!2d-95.677068!3d37.06250000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1473430155257"frameborder="0" style="border:0" allowfullscreen></iframe>
+          <div id="infoMap" style="height:400px;width:100%"></div>
         </div>
       </div>
     </div>
@@ -130,5 +130,18 @@
     </div>
     </div>
   </section>
+
+  {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initAutocomplete" async defer></script> --}}
+  <script src="scripts/main.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&callback=initMap"
+  type="text/javascript"></script>
+  <script type="text/javascript">
+  function initMap() {
+    var  map = new google.maps.Map(document.getElementById('infoMap'), {
+        center: {  lat: 40.100,lng: 48.700},
+        zoom: 8
+      });
+    }
+  </script>
 
 @endsection
