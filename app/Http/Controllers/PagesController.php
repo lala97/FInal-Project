@@ -31,4 +31,15 @@ class PagesController extends Controller
     public function desteklist(){
       return view('pages.ds');
     }
+
+     public function profil(){
+    return view('pages.profil');
+    } 
+    public function qatqi(){
+    return view('pages.profilqatqi');
+    }
+
+    public function qeyd(){
+    return view('pages.profilqeyd');
+    }
 }

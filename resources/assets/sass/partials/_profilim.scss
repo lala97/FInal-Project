@@ -3,6 +3,13 @@
     padding: 40px 0 12.2%;
     position: relative;
 
+    #qatqi, #qeyd{
+        padding-bottom: 18%;
+    }
+    a{
+        text-decoration: none;
+    }
+
     label {
         position: absolute;
         margin: 10px;
@@ -10,7 +17,7 @@
 
         &:hover {
             color: #1E5987;
-            border-bottom: 1px solid #1E5987;
+            // border-bottom: 1px solid #1E5987;
         }
     }
 

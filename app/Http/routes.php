@@ -26,3 +26,10 @@ Route::get('/əlaqə', 'PagesController@elaqe');
 Route::get('/single', 'PagesController@single');
 
 Route::get('/dəstəksiyahısı', 'PagesController@desteklist');
+
+Route::get('/profil', 'PagesController@profil');
+
+Route::get('/qatqi', 'PagesController@qatqi');
+
+Route::get('/qeyd', 'PagesController@qeyd');
+
