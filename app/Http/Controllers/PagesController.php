@@ -21,6 +21,8 @@ class PagesController extends Controller
     }
 
     public function elaqe(){
-      return view('pages.elaqe');
-    }
+      return view('elaqe');
+    } 
+
+
 }
