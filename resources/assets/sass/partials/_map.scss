@@ -4,12 +4,13 @@
   background: #0E9EDB;
 
   input {
-    padding-top: 10px !important;    //inputların ölçüsü üçün padding verilib
-    padding-bottom: 10px !important;
+    padding-top: 10px;    //inputların ölçüsü üçün padding verilib
+    padding-bottom: 10px;
     width: 100%;    //inputun ölçünü(paddingləri) götürməsi üçün və bütün columnu tutması üçün hər ikisi 100%
     height: 100%;
   }
   input[name='submit']{
+    padding-bottom: 8px !important; // Search iconu problem yaratdığı üçün padding aşağı salınıb.
     background: #48C1F3;
     border: 0;
     font-family: FontAwesome;  // inputa fontawesome əlavə etmək üçün font family verilib. search-icon: &#xf002;

@@ -73,7 +73,7 @@
 //           console.log(place.formatted_address)
 //         document.getElementById('lat').value = place.geometry.location.lat();
 //         document.getElementById('lng').value = place.geometry.location.lng();
-//     
+//
 //       }
 //     });
 //     map.fitBounds(bounds);

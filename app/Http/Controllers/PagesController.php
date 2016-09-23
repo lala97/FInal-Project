@@ -23,4 +23,12 @@ class PagesController extends Controller
     public function elaqe(){
       return view('pages.elaqe');
     }
+
+    public function single(){
+      return view('pages.single');
+    }
+
+    public function desteklist(){
+      return view('pages.ds');
+    }
 }
