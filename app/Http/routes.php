@@ -22,3 +22,9 @@ Route::get('/dəstək', 'PagesController@destek');
 Route::get('/haqqımızda', 'PagesController@haqqimizda');
 
 Route::get('/əlaqə', 'PagesController@elaqe');
+
+Route::get('/profil', 'PagesController@profil');
+
+Route::get('/qatqi', 'PagesController@qatqi');
+
+Route::get('/qeyd', 'PagesController@qeyd');

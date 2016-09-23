@@ -22,5 +22,17 @@ class PagesController extends Controller
 
     public function elaqe(){
       return view('elaqe');
+    } 
+
+    public function profil(){
+      return view('profilim');
+    }
+
+    public function qatqi(){
+      return view('profilqatqi');
+    }
+
+    public function qeyd(){
+      return view('profilqeyd');
     }
 }

@@ -59,7 +59,7 @@
                     <li><a href="#"><i class="fa fa-user-plus"></i> Qeydiyyat</a></li>
                     <li><a href="#"><i class="fa fa-sign-in"></i> Daxil ol</a></li>
                 </ul>
-            </div>
+            </div>  
         </div>
     </nav>
 </section>
