@@ -8153,13 +8153,16 @@ button.close {
   background-color: #f0f5f5;
   padding: 40px 0 12.2%;
   position: relative; }
+  #profilim #qatqi, #profilim #qeyd {
+    padding-bottom: 18%; }
+  #profilim a {
+    text-decoration: none; }
   #profilim label {
     position: absolute;
     margin: 10px;
     color: #337ab7; }
     #profilim label:hover {
-      color: #1E5987;
-      border-bottom: 1px solid #1E5987; }
+      color: #1E5987; }
   #profilim ul {
     margin-top: 45px;
     padding: 10px;
