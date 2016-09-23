@@ -47,10 +47,10 @@
         <!-- NEWS BLOCK START -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="thumbnail">
-            <a href="#"><img src="image/car.jpg" alt="News Image"></a>
+            <a href="{{URL('single')}}"><img src="image/car.jpg" alt="News Image"></a>
             <div class="caption">
-              <a href="#"><h3>Maşınımın təmirinə yardım</h3></a>
-              <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p></a>
+              <h3>Maşınımın təmirinə yardım</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
               <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
             </div>
           </div>
@@ -59,70 +59,70 @@
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="thumbnail">
-            <a href="#"><img src="image/1.jpg" alt="News Image"></a>
+            <a href="{{URL('single')}}"><img src="image/1.jpg" alt="News Image"></a>
             <div class="caption">
-              <a href="#"><h3>Maşınımın təmirinə yardım</h3></a>
-              <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p></a>
+              <h3>Maşınımın təmirinə yardım</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
               <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="thumbnail">
-            <a href="#"><img src="image/2.jpg" alt="News Image"></a>
+            <a href="{{URL('single')}}"><img src="image/2.jpg" alt="News Image"></a>
             <div class="caption">
-              <a href="#"><h3>Maşınımın təmirinə yardım</h3></a>
-              <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p></a>
+              <h3>Maşınımın təmirinə yardım</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
               <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="thumbnail">
-            <a href="#"><img src="image/3.jpg" alt="News Image"></a>
+            <a href="{{URL('single')}}"><img src="image/3.jpg" alt="News Image"></a>
             <div class="caption">
-              <a href="#"><h3>Maşınımın təmirinə yardım</h3></a>
-              <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p></a>
+              <h3>Maşınımın təmirinə yardım</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
               <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="thumbnail">
-            <a href="#"><img src="image/4.jpg" alt="News Image"></a>
+            <a href="{{URL('single')}}"><img src="image/4.jpg" alt="News Image"></a>
             <div class="caption">
-              <a href="#"><h3>Maşınımın təmirinə yardım</h3></a>
-              <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p></a>
+              <h3>Maşınımın təmirinə yardım</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
               <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="thumbnail">
-            <a href="#"><img src="image/5.jpg" alt="News Image"></a>
+            <a href="{{URL('single')}}"><img src="image/5.jpg" alt="News Image"></a>
             <div class="caption">
-              <a href="#"><h3>Maşınımın təmirinə yardım</h3></a>
-              <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p></a>
+              <h3>Maşınımın təmirinə yardım</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
               <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="thumbnail">
-            <a href="#"><img src="image/2.jpg" alt="News Image"></a>
+            <a href="{{URL('single')}}"><img src="image/2.jpg" alt="News Image"></a>
             <div class="caption">
-              <a href="#"><h3>Maşınımın təmirinə yardım</h3></a>
-              <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p></a>
+              <h3>Maşınımın təmirinə yardım</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
               <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="thumbnail">
-            <a href="#"><img src="image/1.jpg" alt="News Image"></a>
+            <a href="{{URL('single')}}"   ><img src="image/1.jpg" alt="News Image"></a>
             <div class="caption">
-              <a href="#"><h3>Maşınımın təmirinə yardım</h3></a>
-              <a href="#"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p></a>
+              <h3>Maşınımın təmirinə yardım</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
               <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
             </div>
           </div>
