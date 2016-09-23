@@ -57,8 +57,45 @@
                 <!-- Qeydiyyat və giriş hissəsi  -->
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><i class="fa fa-user-plus"></i> Qeydiyyat</a></li>
-                    <li><a href="#"><i class="fa fa-sign-in"></i> Daxil ol</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-sign-in"></i> Daxil ol</a></li>
+                    <!-- Modal -->
+                    <div id="myModal" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Daxil Ol</h4>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" name="exampleInputEmail1" placeholder="Email">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" name="exampleInputPassword1" placeholder="Password">
+                              </div>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox"> Yadda saxla
+                                </label>
+                                <a href="#" class="pull-right">Şifrəni unutdun?</a>
+                              </div>
+                              <button type="submit" class="btn btn-primary">Daxil ol</button>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Bağla</button>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
                 </ul>
+
             </div>
         </div>
     </nav>
