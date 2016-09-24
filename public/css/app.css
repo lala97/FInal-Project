@@ -7929,6 +7929,10 @@ button.close {
 .destek {
   width: 350px; }
 
+#infoMap {
+  width: 100%;
+  height: 500px; }
+
 #istek {
   background-color: #fce9f7;
   padding-bottom: 10px; }

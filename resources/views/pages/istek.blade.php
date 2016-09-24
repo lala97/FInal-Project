@@ -26,7 +26,6 @@
               <input type="hidden" id="lat">
               <input type="hidden" id="lng">
               <div id="map"></div>
-
             </div>
 
             <div class="col-lg-8">
@@ -40,7 +39,7 @@
 
                   <label class="control-label col-sm-3" for="adres">İstəyin ünvanı:</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="adres" placeholder="İstəyinizin və ya yaşadığınız yerin ünvanı">
+                  <input type="text" class="form-control" id="adres" placeholder="İstəyinizin və ya yaşadığınız yerin ünvanı">
                   </div>
 
                   <label class="control-label col-sm-3" for="qurum">Qurum isə qeyd edin:</label>
@@ -92,5 +91,6 @@
         </div>
     </div>
 </section>
-
+<script type="text/javascript" src="scripts/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initAutocomplete"
 @endsection

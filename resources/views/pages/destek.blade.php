@@ -102,5 +102,7 @@
           </div>
       </div>
   </section>
-
+  <script type="text/javascript" src="scripts/main.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initAutocomplete"
+         async defer></script>
 @endsection
