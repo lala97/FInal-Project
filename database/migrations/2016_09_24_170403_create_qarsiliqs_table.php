@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCitiesTable extends Migration
+class CreateQarsiliqsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,12 @@ class CreateCitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('create_cities_table', function (Blueprint $table) {
+        Schema::create('qarsiliqs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('city_name');
+            $table->integer('user_id');
+            $table->integer('elan_id')->unsigned();
+            $table->foreign('elan_id')->references('id')->on('els');
+            $table->text('about');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateCitiesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('create_cities_table');
+        Schema::drop('qarsiliqs');
     }
 }

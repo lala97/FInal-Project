@@ -33,7 +33,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12 padding0">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26081603.29442044!2d-95.677068!3d37.06250000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1473430155257"frameborder="0" style="border:0" allowfullscreen></iframe>
+            <div id="infoMap" style="width:100%;height:500px"></div>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
   <section id="news">
     <div class="container">
       <div class="row">
-
+          <h1>Ehtiyaclar</h1>
         <!-- NEWS BLOCK START -->
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="thumbnail">
@@ -87,6 +87,7 @@
             </div>
           </div>
         </div>
+          <h1>Destekler</h1>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div class="thumbnail">
             <a href="{{URL('single')}}"><img src="image/4.jpg" alt="News Image"></a>
@@ -130,5 +131,8 @@
     </div>
     </div>
   </section>
-
+ {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initMap"async defer></script> --}}
+ <script type="text/javascript" src="scripts/main.js"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&callback=initMap"
+        async defer></script>
 @endsection
