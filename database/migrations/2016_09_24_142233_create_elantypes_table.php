@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagesTable extends Migration
+class CreateElantypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,9 @@ class CreateImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('create_images_table', function (Blueprint $table) {
+        Schema::create('elantypes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('images_src');
-            $table->integer('announce_id')->unsigned();
-            $table->foreign('announce_id')->references('id')->on('announcements');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreateImagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('create_images_table');
+        Schema::drop('elantypes');
     }
 }

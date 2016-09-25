@@ -12,11 +12,9 @@ class CreateRegionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('create_regions_table', function (Blueprint $table) {
+        Schema::create('regions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('region_name');
-            $table->string('city_id')->unsigned();
-            $table->foreign('city_id')->references('id')->on('cities');
+            
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreateRegionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('create_regions_table');
+        Schema::drop('regions');
     }
 }
