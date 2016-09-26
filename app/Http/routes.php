@@ -22,15 +22,6 @@ Route::get('/test/{id}',function($id)
       return $data->qarsiliqlar;
 });
 
-
-
-
-
-
-
-
-
-
 Route::get('/', function () {
     return view('pages.index');
 });
@@ -52,7 +43,3 @@ Route::get('/profil', 'PagesController@profil');
 Route::get('/qatqi', 'PagesController@qatqi');
 
 Route::get('/qeyd', 'PagesController@qeyd');
-<<<<<<< HEAD
-
-=======
->>>>>>> 40710aa7476085695ebd395e7bd7365eb70fcd96
