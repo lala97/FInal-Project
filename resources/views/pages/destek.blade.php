@@ -34,7 +34,7 @@
                       <h4>Maşınımın təmirinə yardım</h4>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                       dolore magna aliqua...</p>
-                      <a href="{{URL('dəstəksiyahısı')}}" class="btn btn-success" role="button">Bütün İstəklər</a>
+                      <a href="{{url('desteksiyahisi')}}" class="btn btn-success" role="button">Bütün İstəklər</a>
                     </div>
                   </div>
                 </div>

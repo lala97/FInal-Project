@@ -1,3 +1,6 @@
+<?php
+use App\City;
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

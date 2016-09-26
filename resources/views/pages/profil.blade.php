@@ -8,7 +8,7 @@
 
         <form>
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-                <img class="img-responsive" src="{{url('image/4.jpg')}}">            
+                <img class="img-responsive" src="{{url('image/4.jpg')}}">
 
                 <label for="upload"><i class="fa fa-arrow-circle-o-up"></i> yüklə</label>
                 <input type="file" name="sekil" id="upload" class="hidden">
@@ -30,27 +30,30 @@
                             <tbody>
                                 <tr>
                                     <td>İstifadəçi adı</td>
-                                    <td></td>
+                                    <td>{{ Auth::user()->username }}</td>
                                 </tr>
                                 <tr>
                                     <td>Adınız Soyadınız *</td>
-                                    <td><input class="form-control" type="text" name="ad" value=""></td>
+                                    <td><input class="form-control" type="text" name="ad" value="{{ Auth::user()->name}}"></td>
                                 </tr>
                                 <tr>
                                     <td>Telefon Nömrəniz *</td>
-                                    <td><input  class="form-control" type="text" name="telef" value=""></td>
+                                    <td><input  class="form-control" type="text" name="telef" value="{{ Auth::user()->phone}}"></td>
                                 </tr>
                                 <tr>
                                     <td>Elektron Ünvan *</td>
-                                    <td><input  class="form-control" type="email" name="mail" value=""></td>
+                                    <td><input  class="form-control" type="email" name="mail" value="{{ Auth::user()->email}}"></td>
                                 </tr>
                                 <tr>
-                                    <td>Şəhər</td>
-                                    <td><option></option></td>
-                                </tr>
-                                <tr>
-                                    <td>Rayon</td>
-                                    <td><option></option></td>
+                                    <td>Şəhər/Rayon</td>
+                                    <td><select  class="	form-control"  name="">
+																			@foreach($city as $city)
+																				<option>
+																					{{$city->name}}
+																				</option>
+																	   	@endforeach
+																		</td>
+                                    </select>
                                 </tr>
 
                             </tbody>

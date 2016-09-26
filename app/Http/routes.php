@@ -13,6 +13,7 @@
 use App\Elan;
 use App\Elantype;
 use App\User;
+use App\City;
 
 
 
@@ -42,7 +43,7 @@ Route::get('/elaqe', 'PagesController@elaqe');
 
 Route::get('/single', 'PagesController@single');
 
-Route::get('/dəstəksiyahısı', 'PagesController@desteklist');
+Route::get('/desteksiyahisi', 'PagesController@desteklist');
 
 Route::auth();
 

@@ -1,6 +1,8 @@
 @extends('pages.layout')
 
 @section('content')
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -10,8 +12,10 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
+
+
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="name" class="col-md-4 control-label">Adınız</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
@@ -21,6 +25,32 @@
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{$errors->has('username') ? ' has-error ' : ''}}">
+                          <label for="username" class="col-md-4 control-label">İstifadəçi adı</label>
+                          <div class="col-md-6 input-group">
+
+
+
+                            <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}">
+                            @if ($errors->has('username'))
+                              <span class="help-block">
+                                <strong>{{ $errors->first('username') }}</strong>
+                              </span>
+                            @endif
+                          </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="phone" class="col-md-4 control-label">Telefon Nömrəsi</label>
+                            <div class="col-md-6 input-group">
+
+                              <input id="phone" type="text" class="form-control" name="phone">
+                              @if ($errors->has('phone'))
+                                  <span class="help-block">
+                                      <strong>{{ $errors->first('phone') }}</strong>
+                                  </span>
+                              @endif
                             </div>
                         </div>
 
@@ -38,8 +68,29 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+                            <label for="city" class="col-md-4 control-label">Şəhər/Rayon</label>
+
+                            <div class="col-md-6">
+                               <!--  <input id="city" type="text" class="form-control" name="city"> -->
+                                 <select  class="	form-control"  name="city">
+                                  @foreach($city as $city)
+                                    <option id="{{$city->id}}">
+                                      {{$city->name}}
+                                    </option>
+                                  @endforeach
+
+                                </select>
+                                @if ($errors->has('city'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('city') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                            <label for="password" class="col-md-4 control-label">Şifrəniz</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password">
@@ -53,7 +104,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                            <label for="password-confirm" class="col-md-4 control-label">Təkrar Şifrəniz</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
@@ -66,6 +117,8 @@
 
                             </div>
                         </div>
+
+
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

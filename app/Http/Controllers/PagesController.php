@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\City;
 
 class PagesController extends Controller
 {
@@ -33,7 +34,8 @@ class PagesController extends Controller
     }
 
      public function profil(){
-    return view('pages.profil');
+       $city=City::all();
+    return view('pages.profil', compact('city'));
     }
     public function desteklerim(){
     return view('pages.profilqatqi');
