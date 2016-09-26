@@ -52,3 +52,7 @@ Route::get('/profil', 'PagesController@profil');
 Route::get('/qatqi', 'PagesController@qatqi');
 
 Route::get('/qeyd', 'PagesController@qeyd');
+<<<<<<< HEAD
+
+=======
+>>>>>>> 40710aa7476085695ebd395e7bd7365eb70fcd96
