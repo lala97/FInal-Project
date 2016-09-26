@@ -43,59 +43,46 @@
                       <span class="icon-bar"></span>
                     </button>
                     <!-- navbar-brand şəkil olaraq yüklənir -->
-                <a class="navbar-brand" href="{{URL('/')}}"><img src="image/logo.png" alt="logo" /></a>
+                <a class="navbar-brand" href="{{url('/')}}"><img src="image/logo.png" alt="logo" /></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <!-- Səhifə adları -->
                 <ul class="nav navbar-nav">
-                    <li><a class="active" href="{{URL('/')}}"><i class="fa fa-home"></i> Ana Səhİfə</a></li>
-                    <li><a href="{{URL('istək')}}"><i class="fa fa-map-marker"></i> İstək əlavə et</a></li>
-                    <li><a href="{{URL('/dəstək')}}"><i class="fa fa-yelp"></i> Dəstək ol</a></li>
-                    <li><a href="{{URL('/haqqımızda')}}"><i class="fa fa-info-circle"></i> Haqqımızda</a></li>
-                    <li><a href="{{URL('/əlaqə')}}"><i class="fa fa-phone"></i> Əlaqə</a></li>
+                    <li><a {{Request::is('/') ? "class=active" : ''}} href="{{url('/')}}"><i class="fa fa-home"></i> Ana Səhİfə</a></li>
+                    <li><a {{Request::is('istek') ? "class=active" : ''}} href="{{url('/istek')}}"><i class="fa fa-map-marker"></i> İstək əlavə et</a></li>
+                    <li><a {{Request::is('destek') ? "class=active" : ''}} href="{{url('/destek')}}"><i class="fa fa-yelp"></i> Dəstək ol</a></li>
+                    <li><a {{Request::is('haqqimizda') ? "class=active" : ''}} href="{{url('/haqqimizda')}}"><i class="fa fa-info-circle"></i> Haqqımızda</a></li>
+                    <li><a {{Request::is('elaqe') ? "class=active" : ''}} href="{{url('/elaqe')}}"><i class="fa fa-phone"></i> Əlaqə</a></li>
                 </ul>
                 <!-- Qeydiyyat və giriş hissəsi  -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-user-plus"></i> Qeydiyyat</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-sign-in"></i> Daxil ol</a></li>
-                    <!-- Modal -->
-                    <div id="myModal" class="modal fade" role="dialog">
-                      <div class="modal-dialog">
+                  {{-- @if(Auth::guest())
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{url('/register')}}"><i class="fa fa-user-plus"></i> Qeydiyyat</a></li>
+                        <li><a href="{{url('/login')}}"><i class="fa fa-sign-in"></i> Daxil ol</a></li>
+                    </ul>
+                  @else
 
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Daxil Ol</h4>
-                          </div>
-                          <div class="modal-body">
-                            <form>
-                              <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" name="exampleInputEmail1" placeholder="Email">
-                              </div>
-                              <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" name="exampleInputPassword1" placeholder="Password">
-                              </div>
-                              <div class="checkbox">
-                                <label>
-                                  <input type="checkbox"> Yadda saxla
-                                </label>
-                                <a href="#" class="pull-right">Şifrəni unutdun?</a>
-                              </div>
-                              <button type="submit" class="btn btn-primary">Daxil ol</button>
-                            </form>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Bağla</button>
-                          </div>
-                        </div>
+                  @endif --}}
+                  <ul class="nav navbar-nav navbar-right">
+                      <!-- Authentication Links -->
+                      @if (Auth::guest())
+                        <li><a href="{{url('/register')}}"><i class="fa fa-user-plus"></i> Qeydiyyat</a></li>
+                        <li><a href="{{url('/login')}}"><i class="fa fa-sign-in"></i> Daxil ol</a></li>
+                      @else
+                          <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Xoş gəldiniz, {{ Auth::user()->name }} <span class="caret"></span>
+                              </a>
 
-                      </div>
-                    </div>
-                </ul>
-
+                              <ul class="dropdown-menu" role="menu">
+                                  <li><a href="{{ url('/profil') }}"><i class="fa fa-btn fa-user"></i> Profilim</a></li>
+                                  <li><a href="{{ url('/ehtiyaclarim') }}"><i class="fa fa-btn fa-sign-out"></i> Ehtiyaclarım</a></li>
+                                  <li><a href="{{ url('/desteklerim') }}"><i class="fa fa-btn fa-sign-out"></i> Dəstəklərim</a></li>
+                                  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
+                              </ul>
+                          </li>
+                      @endif
+                  </ul>
             </div>
         </div>
     </nav>

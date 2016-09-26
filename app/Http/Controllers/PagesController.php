@@ -8,13 +8,13 @@ use App\Http\Requests;
 
 class PagesController extends Controller
 {
-    public function istek(){
-      return view('pages.istek');
-    }
+    // public function istek(){
+    //   return view('pages.istek');
+    // }
 
-    public function destek(){
-      return view('pages.destek');
-    }
+    // public function destek(){
+    //   return view('pages.destek');
+    // }
 
     public function haqqimizda(){
       return view('pages.haqqimizda');
@@ -34,12 +34,12 @@ class PagesController extends Controller
 
      public function profil(){
     return view('pages.profil');
-    } 
-    public function qatqi(){
+    }
+    public function desteklerim(){
     return view('pages.profilqatqi');
     }
 
-    public function qeyd(){
+    public function ehtiyaclarim(){
     return view('pages.profilqeyd');
     }
 }

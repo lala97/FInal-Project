@@ -1,14 +1,14 @@
 @extends('pages/layout')
 
 @section('content')
-	
+
 	<section id="profilim">
     <div class="container">
         <div class="row">
 
-        <form>            
+        <form>
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-                <img class="img-responsive" src="assets/image/4.jpg">            
+                <img class="img-responsive" src="{{url('image/4.jpg')}}">            
 
                 <label for="upload"><i class="fa fa-arrow-circle-o-up"></i> yüklə</label>
                 <input type="file" name="sekil" id="upload" class="hidden">
@@ -52,7 +52,7 @@
                                     <td>Rayon</td>
                                     <td><option></option></td>
                                 </tr>
-                               
+
                             </tbody>
                         </table>
 
@@ -64,8 +64,8 @@
             </div>
             </form>
         </div>
-    </div>        
-</section> 
+    </div>
+</section>
 
 
 @endsection

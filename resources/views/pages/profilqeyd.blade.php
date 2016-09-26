@@ -1,16 +1,16 @@
 @extends('pages/layout')
 
-@section('content')    
+@section('content')
 
 	<section id="profilim">
 	    <div class="container">
 	    <div id="qeyd">
-	    	
+
 	        <div class="row">
 
-	        <form>            
+	        <form>
 	            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-	                <img class="img-responsive" src="assets/image/4.jpg">            
+	                <img class="img-responsive" src="assets/image/4.jpg">
 
 	                <label for="upload"><i class="fa fa-arrow-circle-o-up"></i> yüklə</label>
 	                <input type="file" name="sekil" id="upload" class="hidden">
@@ -25,7 +25,7 @@
 	            <div class="col-lg-8 col-md-8 col-sm-9  col-xs-12">
 	                <div class="profilime panel panel-primary">
 	                    <div class="panel-heading">
-	                        <h4><i class="fa fa-thumb-tack" aria-hidden="true"></i> İstifadəçi qeydlərim</h4>
+	                        <h4><i class="fa fa-thumb-tack" aria-hidden="true"></i> Ehtiyaclarim</h4>
 	                    </div>
 	                    <div class="panel-body">
 	                        <table class="table table-bordered">
@@ -42,6 +42,6 @@
 	            </form>
 	        </div>
 	        </div>
-	    </div>        
-	</section> 
+	    </div>
+	</section>
 @endsection

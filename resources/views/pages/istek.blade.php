@@ -17,12 +17,11 @@
     </ul>
     </div>
 </section>
-<!-- naseh sencun comment yazdim. form hisseye bashlangic :) -->
+
 <section id="address">
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-              <!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
               <input type="hidden" id="lat">
               <input type="hidden" id="lng">
               <div id="map"></div>

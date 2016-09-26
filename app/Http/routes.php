@@ -26,20 +26,24 @@ Route::get('/', function () {
     return view('pages.index');
 });
 
-Route::get('/istək', 'PagesController@istek');
+Route::get('/istek', 'IstekController@show');
 
-Route::get('/dəstək', 'PagesController@destek');
+Route::get('/destek', 'DestekController@show');
 
-Route::get('/haqqımızda', 'PagesController@haqqimizda');
+Route::get('/haqqimizda', 'PagesController@haqqimizda');
 
-Route::get('/əlaqə', 'PagesController@elaqe');
+Route::get('/profil', 'PagesController@profil');
+
+Route::get('/desteklerim', 'PagesController@desteklerim');
+
+Route::get('/ehtiyaclarim', 'PagesController@ehtiyaclarim');
+
+Route::get('/elaqe', 'PagesController@elaqe');
 
 Route::get('/single', 'PagesController@single');
 
 Route::get('/dəstəksiyahısı', 'PagesController@desteklist');
 
-Route::get('/profil', 'PagesController@profil');
+Route::auth();
 
-Route::get('/qatqi', 'PagesController@qatqi');
-
-Route::get('/qeyd', 'PagesController@qeyd');
+Route::get('/home', 'HomeController@index');
