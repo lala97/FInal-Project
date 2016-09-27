@@ -41,7 +41,7 @@
 
               <div class="col-lg-8">
                 <div class="sag">
-                  <form action="{{url('/destek')}}" method="post">
+                  <form action="{{url('/destek')}}" method="post" enctype="multipart/form-data">
                       {{csrf_field()}}
                       <input type="hidden" id="lat" name="lat">
                       <input type="hidden" id="lng" name="lng">
@@ -88,7 +88,12 @@
 
                     <label class="control-label col-sm-3" for="mail">Email:</label>
                     <div class="col-sm-9">
-                      <input type="email" class="form-control" id="mail" placeholder="Şəxsin elektron ünvanı">
+                      <input type="email" name="email" class="form-control" id="mail" placeholder="Şəxsin elektron ünvanı">
+                    </div>
+
+                    <label class="control-label col-sm-3" for="nov">Növ:</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="nov" class="form-control" id="nov" placeholder="Dəstəyin növü">
                     </div>
 
                     <!-- </div> -->

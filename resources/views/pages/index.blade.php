@@ -43,96 +43,56 @@
   <section id="news">
     <div class="container">
       <div class="row">
-          <h1>Ehtiyaclar</h1>
-        <!-- NEWS BLOCK START -->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <div class="thumbnail">
-            <a href="{{URL('single')}}"><img src="image/car.jpg" alt="News Image"></a>
-            <div class="caption">
-              <h3>Maşınımın təmirinə yardım</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-              <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
-            </div>
-          </div>
-        </div>
-        <!-- NEWS BLOCK END -->
 
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <div class="thumbnail">
-            <a href="{{URL('single')}}"><img src="image/1.jpg" alt="News Image"></a>
-            <div class="caption">
-              <h3>Maşınımın təmirinə yardım</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-              <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <div class="thumbnail">
-            <a href="{{URL('single')}}"><img src="image/2.jpg" alt="News Image"></a>
-            <div class="caption">
-              <h3>Maşınımın təmirinə yardım</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-              <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <div class="thumbnail">
-            <a href="{{URL('single')}}"><img src="image/3.jpg" alt="News Image"></a>
-            <div class="caption">
-              <h3>Maşınımın təmirinə yardım</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-              <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
-            </div>
-          </div>
-        </div>
-          <h1>Destekler</h1>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <div class="thumbnail">
-            <a href="{{URL('single')}}"><img src="image/4.jpg" alt="News Image"></a>
-            <div class="caption">
-              <h3>Maşınımın təmirinə yardım</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-              <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <div class="thumbnail">
-            <a href="{{URL('single')}}"><img src="image/5.jpg" alt="News Image"></a>
-            <div class="caption">
-              <h3>Maşınımın təmirinə yardım</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-              <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <div class="thumbnail">
-            <a href="{{URL('single')}}"><img src="image/2.jpg" alt="News Image"></a>
-            <div class="caption">
-              <h3>Maşınımın təmirinə yardım</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-              <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <div class="thumbnail">
-            <a href="{{URL('single')}}"   ><img src="image/1.jpg" alt="News Image"></a>
-            <div class="caption">
-              <h3>Maşınımın təmirinə yardım</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-              <p><a href="{{URL('single')}}" class="btn center-block" role="button">Ətraflı</a></p>
-            </div>
-          </div>
-        </div>
+          @foreach($datas as $data)
+            @if($data->status=='1')
+                   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <div class="thumbnail">
+                    <a href="{{url('/single/'.$data->id)}}"><img src="{{url('/image/'.$data->image)}}" alt="News Image"></a>
+                    <div class="caption">
+                      <h3>{{$data->title}}</h3>
+                      <p>{{substr($data->about, 0,150)}}...</p>
+                      <p><a href="{{url('/single/'.$data->id)}}" class="btn center-block" role="button">Ətraflı</a></p>
+                    </div>
+                  </div>
+                </div>
+              @endif
+          @endforeach
     </div>
+               {{ $datas->links()}}
     </div>
   </section>
  {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initMap"async defer></script> --}}
  <script type="text/javascript" src="scripts/main.js"></script>
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&callback=initMap"
         async defer></script>
+
+        <script type="text/javascript">
+      function initMap() {
+      var myLatLng = [
+      @foreach($datamaps as $datamap)
+         @if($datamap->status=='1')
+            {lat: {{$datamap->lat}}, lng:{{$datamap->lng}} },
+          @endif
+      @endforeach
+      ];
+      var map = new google.maps.Map(document.getElementById('infoMap'), {
+      center: {  lat: 40.100,lng: 48.800},
+      zoom: 8,
+      scrollwheel: false
+    });
+     
+   
+         for (var i = 0; i < myLatLng.length; i++) {
+            marker = new google.maps.Marker({
+            position: myLatLng[i],
+            map: map,
+            title: 'Hello World!'
+           });
+          
+        }       
+   
+}
+
+        </script>
 @endsection

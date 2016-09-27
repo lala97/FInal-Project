@@ -9,7 +9,7 @@ use App\City;
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <!-- Bootstrap və Fontawesome sass ilə qoşulub -->
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="{{url('css/app.css')}}">
 </head>
 <body>
 <!-- CONTACT SECTION START -->
@@ -46,7 +46,7 @@ use App\City;
                       <span class="icon-bar"></span>
                     </button>
                     <!-- navbar-brand şəkil olaraq yüklənir -->
-                <a class="navbar-brand" href="{{url('/')}}"><img src="image/logo.png" alt="logo" /></a>
+                <a class="navbar-brand" href="{{url('/')}}"><img src="{{url('image/logo.png')}}" alt="logo" /></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <!-- Səhifə adları -->
@@ -79,7 +79,7 @@ use App\City;
 
                               <ul class="dropdown-menu" role="menu">
                                   <li><a href="{{ url('/profil') }}"><i class="fa fa-btn fa-user"></i> Profilim</a></li>
-                                  <li><a href="{{ url('/ehtiyaclarim') }}"><i class="fa fa-btn fa-sign-out"></i> Ehtiyaclarım</a></li>
+                                  <li><a href="{{ url('/isteklerim') }}"><i class="fa fa-btn fa-sign-out"></i> Ehtiyaclarım</a></li>
                                   <li><a href="{{ url('/desteklerim') }}"><i class="fa fa-btn fa-sign-out"></i> Dəstəklərim</a></li>
                                   <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
                               </ul>
@@ -96,7 +96,7 @@ use App\City;
   <div class="container">
     <div class="row">
       <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3">
-        <img src="image/logo.png" alt="logo" />
+        <img src="{{url('image/logo.png')}}" alt="logo" />
       </div>
       <div class="col-lg-6 col-md-6 col-sm-4 col-xs-9">
         <p>

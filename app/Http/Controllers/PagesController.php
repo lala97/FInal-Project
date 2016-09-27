@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\City;
+use App\Elan;
 
 class PagesController extends Controller
 {
@@ -16,6 +17,12 @@ class PagesController extends Controller
     // public function destek(){
     //   return view('pages.destek');
     // }
+  public function index()
+  {
+      $datas=Elan::paginate(8);
+      $datamaps=Elan::all();
+      return view('pages.index',compact('datas','datamaps'));
+  }
 
     public function haqqimizda(){
       return view('pages.haqqimizda');
@@ -25,8 +32,9 @@ class PagesController extends Controller
       return view('pages.elaqe');
     }
 
-    public function single(){
-      return view('pages.single');
+    public function single($id){
+      $single = Elan::find($id);
+      return view('pages.single',compact('single'));
     }
 
     public function desteklist(){
@@ -41,7 +49,5 @@ class PagesController extends Controller
     return view('pages.profilqatqi');
     }
 
-    public function ehtiyaclarim(){
-    return view('pages.profilqeyd');
-    }
+    
 }

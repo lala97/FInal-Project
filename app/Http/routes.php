@@ -23,27 +23,27 @@ Route::get('/test/{id}',function($id)
       return $data->qarsiliqlar;
 });
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/', 'PagesController@index');
 
 Route::get('/istek', 'IstekController@show');
+
 Route::post('/istek', 'IstekController@store');
 
 Route::get('/destek', 'DestekController@show');
+
 Route::post('/destek', 'DestekController@store');
 
 Route::get('/haqqimizda', 'PagesController@haqqimizda');
 
 Route::get('/profil', 'PagesController@profil');
 
-Route::get('/desteklerim', 'PagesController@desteklerim');
+Route::get('/desteklerim', 'DestekController@desteklerim');
 
-Route::get('/ehtiyaclarim', 'PagesController@ehtiyaclarim');
+Route::get('/isteklerim', 'IstekController@isteklerim');
 
 Route::get('/elaqe', 'PagesController@elaqe');
 
-Route::get('/single', 'PagesController@single');
+Route::get('/single/{id}', 'PagesController@single');
 
 Route::get('/desteksiyahisi', 'PagesController@desteklist');
 

@@ -9,14 +9,14 @@
             <div class="row">
                 <form>
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-                        <img class="img-responsive" src="assets/image/4.jpg">
+                        <img class="img-responsive" src="{{url('image/4.jpg')}}">
                         <label for="upload"><i class="fa fa-arrow-circle-o-up"></i> yüklə</label>
                         <input type="file" name="sekil" id="upload" class="hidden">
                         <ul class="list-unstyled">
-                            <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><b> İstifadəçinin məlumatları</b></a></li>
+                            <li><a href="{{url('/profil')}}"><i class="fa fa-user" aria-hidden="true"></i><b> İstifadəçinin məlumatları</b></a></li>
                             <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i> Şifrə dəyişdir</a></li>
-                            <li><a href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i> İstək qeydlərim</a></li>
-                            <li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i> İstək qatqılarım</a></li>
+                            <li><a href="{{url('/isteklerim')}}"><i class="fa fa-thumb-tack" aria-hidden="true"></i> İstək qeydlərim</a></li>
+                            <li><a href="{{url('/desteklerim')}}"><i class="fa fa-tags" aria-hidden="true"></i> İstək qatqılarım</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-9  col-xs-12">
@@ -28,11 +28,29 @@
                                 <table class="table table-bordered">
                                     <tbody>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <!-- burda olanlar da artiq cedvelden gelecek. static bi shey yazmiram ehtiyac yoxdu cunki. olsa yazardim narahat olmuyun -->
+                                            <th>Başlıq</th>
+                                            <th>Haqqında</th>
+                                            <th>Ünvan</th>
+                                            <th>Ad</th>
+                                            <th>Nömrə</th>
+                                            <th>Email</th>
+                                            <th>Qurum</th>
+                                            <th>Növ</th>
                                         </tr>
-
+                                        @foreach($destekler as $destek)
+                                            @if($destek->status == '1' && $destek->id = Auth::user()->id && $destek->type_id == '1')
+                                                <tr>
+                                                    <td>{{$destek->title}}</td>
+                                                    <td>{{$destek->about}}</td>
+                                                    <td>{{$destek->location}}</td>
+                                                    <td>{{$destek->name}}</td>
+                                                    <td>{{$destek->phone}}</td>
+                                                    <td>{{$destek->email}}</td>
+                                                    <td>{{$destek->org}}</td>
+                                                    <td>{{$destek->nov}}</td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

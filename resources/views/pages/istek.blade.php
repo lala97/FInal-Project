@@ -27,13 +27,12 @@
 
             <div class="col-lg-8">
               <div class="sag">
-                <form action="{{url('/istek')}}" method="post">
-                  <!-- <div class="form-group"> -->
+                <form action="{{url('/istek')}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                   <input type="hidden" id="lat" name="lat">
                   <input type="hidden" id="lng" name="lng">
                   <input type="hidden" value="2" name="type_id">
-                  <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
+                  {{-- <input type="hidden" value="{{Auth::user()->id}}" name="user_id"> --}}
 
 
                   <label class="control-label col-sm-3" for="head">İstəyin başlığı:</label>
@@ -76,7 +75,12 @@
 
                   <label class="control-label col-sm-3" for="mail">Email:</label>
                   <div class="col-sm-9">
-                    <input type="email" class="form-control" id="mail" placeholder="Şəxsin elektron ünvanı">
+                    <input type="email" name='email' class="form-control" id="mail" placeholder="Şəxsin elektron ünvanı">
+                  </div>
+
+                  <label class="control-label col-sm-3" for="nov">Növ:</label>
+                  <div class="col-sm-9">
+                    <input type="text" name='nov' class="form-control" id="nov" placeholder="isteyin novu">
                   </div>
                   <div class="col-sm-2 col-sm-offset-3">
                     <input type="submit" name="kaydet" value="Qeyd Et" class="btn">
