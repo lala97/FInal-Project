@@ -1,11 +1,13 @@
 //index sehifesinde map ucun
 
-function initMap() {
-var map = new google.maps.Map(document.getElementById('infoMap'), {
-  center: {  lat: 40.100,lng: 48.800},
-   zoom: 8
- });
-}
+// function initMap() {
+// var map = new google.maps.Map(document.getElementById('infoMap'), {
+//   center: {  lat: 40.100,lng: 48.800},
+//    zoom: 8
+//  });
+// }
+
+
 
 
 // destek sehifesinde map ucun
