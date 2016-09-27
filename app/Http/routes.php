@@ -52,8 +52,10 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/alfagen', 'AdminController@index');
-Route::get('/list', 'AdminController@list');
+Route::get('/lists', 'AdminController@lists');
 
 Route::get('/isteklist', 'AdminController@isteklist');
 Route::get('/desteklist', 'AdminController@desteklist');
 Route::get('/userlist', 'AdminController@userlist');
+Route::get('/activate/{id}', 'AdminController@activate');
+Route::get('/deactivate/{id}', 'AdminController@deactivate');
