@@ -31,7 +31,7 @@ class User extends Authenticatable
 
     public function elanlar()
     {
-      return $this->hasMany('App\Elan');
+      return $this->hasMany('App\Elan','user_id');  //yeniii
     }
 
     public function qarsiliqlar()

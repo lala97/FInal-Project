@@ -22,56 +22,55 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-              <input type="hidden" id="lat">
-              <input type="hidden" id="lng">
               <div id="map"></div>
             </div>
 
             <div class="col-lg-8">
               <div class="sag">
-                <form action="" method="post">
+                <form action="{{url('/istek')}}" method="post">
                   <!-- <div class="form-group"> -->
+                    {{csrf_field()}}
+                  <input type="hidden" id="lat" name="lat">
+                  <input type="hidden" id="lng" name="lng">
+                  <input type="hidden" value="2" name="type_id">
+                  <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
+
+
                   <label class="control-label col-sm-3" for="head">İstəyin başlığı:</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="head" placeholder="Məsələn: Sökük məktəb, qırıq əşyalar və s...">
+                    <input type="text" name="title" class="form-control" id="head" placeholder="Məsələn: Sökük məktəb, qırıq əşyalar və s...">
                   </div>
 
                   <label class="control-label col-sm-3" for="adres">İstəyin ünvanı:</label>
                   <div class="col-sm-9">
-                  <input type="text" class="form-control" id="adres" placeholder="İstəyinizin və ya yaşadığınız yerin ünvanı">
+                  <input type="text" name="location" class="form-control" id="adres" placeholder="İstəyinizin və ya yaşadığınız yerin ünvanı">
                   </div>
 
                   <label class="control-label col-sm-3" for="qurum">Qurum isə qeyd edin:</label>
                   <div class="col-sm-9">
-                    <select class="form-control" id="qurum">
-                      <option>Məktəb</option>
-                      <option>Universitet</option>
-                      <option>Bağça</option>
-                    </select>
+                    <input name="org" type="text" class="form-control" id="org" placeholder="Təskilat,Universitet ve s">
                   </div>
-
-
 
                   <label class="control-label col-sm-3" for="aciq">İstəyin Açıqlanması:</label>
                   <div class="col-sm-9">
 
-                    <input type="text" class="form-control" id="aciq" placeholder="Bütün detalları açıqlayın. Problem nədir? Kimlərə təsir edir?">
+                    <input type="text" name="about" class="form-control" id="aciq" placeholder="Bütün detalları açıqlayın. Problem nədir? Kimlərə təsir edir?">
                   </div>
 
 
                   <label class="control-label col-sm-3" for="pic">Şəkil:</label>
                   <div class="col-sm-9">
-                    <input type="file" class="form-control" id="pic">
+                    <input  type="file" class="form-control" id="pic" name="image">
                   </div>
 
                   <label class="control-label col-sm-3" for="name">Ad Soyad:</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="name" placeholder="İstək məsələsində əlaqə quracağımız şəxs">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="İstək məsələsində əlaqə quracağımız şəxs">
                   </div>
 
                   <label class="control-label col-sm-3" for="numb">Telefon:</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="numb" placeholder="Şəxsin telefon nömrəsi">
+                    <input type="text" name="phone" class="form-control" id="numb" placeholder="Şəxsin telefon nömrəsi">
                   </div>
 
 
@@ -79,11 +78,19 @@
                   <div class="col-sm-9">
                     <input type="email" class="form-control" id="mail" placeholder="Şəxsin elektron ünvanı">
                   </div>
-
-                  <!-- </div> -->
                   <div class="col-sm-2 col-sm-offset-3">
                     <input type="submit" name="kaydet" value="Qeyd Et" class="btn">
                   </div>
+
+                  @if (count($errors) > 0)
+
+                    <ul class="alert alert-danger table">
+                      @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                      @endforeach
+                    </ul>
+
+                  @endif
                 </form>
               </div>
             </div>

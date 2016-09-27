@@ -21,7 +21,14 @@ class CreateElsTable extends Migration
            $table->boolean('status');
            $table->text('about');
            $table->string('location');
+           $table->string('lat');  // yeniii
+           $table->string('lng'); //yeniii
+           $table->string('name');  //yeniii
+           $table->integer('phone');  //yeniii
+           $table->string('email'); //yenii
            $table->string('image');
+           $table->string('org');  //yenii
+           $table->string('nov'); //yeniii
            $table->timestamps();
         });
     }

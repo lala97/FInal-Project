@@ -28,8 +28,10 @@ Route::get('/', function () {
 });
 
 Route::get('/istek', 'IstekController@show');
+Route::post('/istek', 'IstekController@store');
 
 Route::get('/destek', 'DestekController@show');
+Route::post('/destek', 'DestekController@store');
 
 Route::get('/haqqimizda', 'PagesController@haqqimizda');
 
@@ -48,3 +50,10 @@ Route::get('/desteksiyahisi', 'PagesController@desteklist');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/alfagen', 'AdminController@index');
+Route::get('/list', 'AdminController@list');
+
+Route::get('/isteklist', 'AdminController@isteklist');
+Route::get('/desteklist', 'AdminController@desteklist');
+Route::get('/userlist', 'AdminController@userlist');
