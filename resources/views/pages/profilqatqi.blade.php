@@ -38,7 +38,7 @@
                                             <th>Növ</th>
                                         </tr>
                                         @foreach($destekler as $destek)
-                                            @if($destek->status == '1' && $destek->id = Auth::user()->id && $destek->type_id == '1')
+                                            @if($destek->status == '1' && $destek->user_id = Auth::user()->id && $destek->type_id == '1')
                                                 <tr>
                                                     <td>{{$destek->title}}</td>
                                                     <td>{{$destek->about}}</td>
@@ -48,6 +48,8 @@
                                                     <td>{{$destek->email}}</td>
                                                     <td>{{$destek->org}}</td>
                                                     <td>{{$destek->nov}}</td>
+                                                    <td><a class="btn btn-primary" href="{{url('/desteksil/'.$destek->id)}}">Sil</a></td>
+
                                                 </tr>
                                             @endif
                                         @endforeach

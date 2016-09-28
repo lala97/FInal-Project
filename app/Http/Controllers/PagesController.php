@@ -42,13 +42,36 @@ class PagesController extends Controller
 
     public function desteklist()  //yeni
     { 
-      $desteklist=Elan::all();
+      $desteklist=Elan::paginate(24);
       return view('pages.ds',compact('desteklist'));
+    }
+        public function isteklist()  //yeni
+    { 
+      $isteklist=Elan::paginate(24);
+      return view('pages.isteklist',compact('isteklist'));
     }
      public function profil(){
        $city=City::all();
     return view('pages.profil', compact('city'));
     }
+
+        public function avatar(Request $req)
+    {
+      $direction='image/';
+      $filetype=$req->file('image')->getClientOriginalExtension();
+      $filename=rand(11111,99999).'.'.$filetype;
+      $req->file('image')->move(public_path('image/'),$filename);
+
+      $data = [
+            'avatar'=>$filename
+          ];
+
+       Auth::user()->update($data);
+       return redirect('/profil');
+      }
+    
+
+
     public function update(Request $req) //yeniiiiii
     {
       Auth::user()->update($req->all());

@@ -29,15 +29,21 @@ Route::get('/istek', 'IstekController@show');
 
 Route::post('/istek', 'IstekController@store');
 
+Route::get('/isteksil/{id}', 'IstekController@delete'); //yeni
+
 Route::get('/destek', 'DestekController@show');
 
 Route::post('/destek', 'DestekController@store');
+
+Route::get('/desteksil/{id}', 'DestekController@delete'); //yeni
 
 Route::get('/haqqimizda', 'PagesController@haqqimizda');
 
 Route::get('/profil', 'PagesController@profil');
 
-Route::post('/profil', 'PagesController@update'); //yenilik
+Route::post('/profil', 'PagesController@update');
+
+Route::post('/avatar', 'PagesController@avatar');//yeniii 
 
 Route::get('/desteklerim', 'DestekController@desteklerim');
 
@@ -49,11 +55,11 @@ Route::get('/single/{id}', 'PagesController@single');
 
 Route::get('/desteksiyahisi', 'PagesController@desteklist');
 
-Route::get('/desteksiyahisi', 'PagesController@desteklist');//yeni
+Route::get('/isteksiyahisi', 'PagesController@isteklist'); //istek list olmalidi yeqin. 
 
 Route::auth();
 
-// Route::get('/alfagen', 'HomeController@index');
+//admin part
 
 Route::get('/alfagen', 'AdminController@index');
 Route::get('/lists', 'AdminController@lists');

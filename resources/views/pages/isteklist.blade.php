@@ -4,28 +4,28 @@
   <section id="destek_olanlar">
      <div class="container">
         <div class="row">
-        @foreach($desteklist as $destek)
-        @if($destek->type_id=='1')
+        @foreach($isteklist as $istek)
+        @if($istek->type_id=='2')
            <div class="col-md-6 col-sm-12">
               <div class="row_padding">
                  <div class="col-md-12">
                     <div class="destek_img">
-                       <img class="img-responsive " src="{{url('image/'.$destek->image)}}"/>
+                       <img class="img-responsive " src="{{url('image/'.$istek->image)}}"/>
                     </div>
                  </div>
                  <div class="col-md-12">
-                    <h2>{{$destek->title}}</h2>
-                    <p>{{$destek->about}}</p>
-                    <h4>Ünvan: <b>{{$destek->location}}</b>&nbsp19/08/2016</h4>
+                    <h2>{{$istek->title}}</h2>
+                    <p>{{$istek->about}}</p>
+                    <h4>Ünvan: <b>{{$istek->location}}</b>&nbsp19/08/2016</h4>
                     <a style="background-color: #6A1B9A;color:white" class="btn" href="{{URL('single')}}">Ətraflı</a>
                  </div>
               </div>
            </div>
            @endif
           @endforeach
-          {{ $desteklist->links()}}
+          {{ $isteklist->links()}}
         </div>
-        {{-- <nav aria-label="Page navigation">
+    {{--     <nav aria-label="Page navigation">
           <ul class="pagination pull-right">
             <li class="page-item">
               <a class="page-link" href="#" aria-label="Previous">
