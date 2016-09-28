@@ -10,6 +10,7 @@ use App\City;
     <title>@yield('title')</title>
     <!-- Bootstrap və Fontawesome sass ilə qoşulub -->
     <link rel="stylesheet" href="{{url('css/app.css')}}">
+    <script src="scripts/vendors/jquery.js"></script>
 </head>
 <body>
 <!-- CONTACT SECTION START -->
@@ -79,9 +80,9 @@ use App\City;
 
                               <ul class="dropdown-menu" role="menu">
                                   <li><a href="{{ url('/profil') }}"><i class="fa fa-btn fa-user"></i> Profilim</a></li>
-                                  <li><a href="{{ url('/isteklerim') }}"><i class="fa fa-btn fa-sign-out"></i> Ehtiyaclarım</a></li>
-                                  <li><a href="{{ url('/desteklerim') }}"><i class="fa fa-btn fa-sign-out"></i> Dəstəklərim</a></li>
-                                  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
+                                  <li><a href="{{ url('/isteklerim') }}"><i class="fa fa-btn fa-map-marker"></i> Ehtiyaclarım</a></li>
+                                  <li><a href="{{ url('/desteklerim') }}"><i class="fa fa-btn fa-yelp"></i> Dəstəklərim</a></li>
+                                  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Çıxış</a></li>
                               </ul>
                           </li>
                       @endif
@@ -109,7 +110,7 @@ use App\City;
     </div>
   </div>
 </div>
-<script src="scripts/vendors/jquery.js"></script>
+
 <script src="scripts/vendors/bootstrap.min.js"></script>
 <script src="scripts/vendors/modernizr.min.js"></script>
 {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initAutocomplete"async defer></script>

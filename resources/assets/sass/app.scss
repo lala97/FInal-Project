@@ -4,7 +4,6 @@
 @import 'https://fonts.googleapis.com/css?family=Titillium+Web:400,700&subset=latin-ext';
 @import "commonClasses";
 @import "mediaQueries";
-@import "partials/destek_ol";
 @import "partials/elaqe";
 @import "partials/haqqimizda";
 @import "partials/index";
@@ -15,9 +14,9 @@
 @import "partials/footer";
 @import "partials/sual";
 @import "partials/profilim";
-@import "partials/ehtiyacim";
 @import "partials/loginpage";
 @import "partials/ds";
+@import "partials/single";
 
 body {
     font-weight: 400;

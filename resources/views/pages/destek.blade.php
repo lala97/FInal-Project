@@ -8,32 +8,29 @@
   <section id="istek">
       <div class="container">
       <ul>
-          <li class="pull-left"> <h1>Yeni <span style="color:#2AB6FF">dəstək</span></h1></li>
+          <li class="pull-left"> <h1><span>Yeni </span> Dəstək</span></h1></li>
           <li class="pull-right">
-               <a href="index.php">ANA SƏHİFƏ </a>
-              <span> / </span>
+               <a href="{{url('/')}}">ANA SƏHİFƏ / </a>
               <a href="{{url('/destek')}}"> YENİ DƏSTƏK</a>
           </li>
       </ul>
       </div>
   </section>
-  <!-- naseh sencun comment yazdim. form hisseye bashlangic :) -->
   <section id="address">
       <div class="container">
           <div class="row">
               <div class="col-lg-4">
-                <!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
-
                 <div id="map"></div>
                 <div class="destek">
                   <!-- Soldakı bütün istəklər -->
-                  <div class="thumbnail">
-                    <a href="#"><img src="image/1.jpg" alt="News Image"></a>
+                  <div class="thumbnail" >
+                    <img src="image/{{$sonEls->image}}">
                     <div class="caption">
-                      <h4>Maşınımın təmirinə yardım</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                      dolore magna aliqua...</p>
-                      <a href="{{url('desteksiyahisi')}}" class="btn btn-success" role="button">Bütün İstəklər</a>
+                      <h4 class="text-center">{{$sonEls->title}}</h4>
+                      <p>{{substr($sonEls->about, 0,200)}}...</p>
+                      <p class="text-right"><b>{{$sonEls->created_at}}</b></p>
+                      <a href="{{url('/desteksiyahisi')}}" class="btn btn-success" role="button">Bütün İstəklər</a>
+                      <a href="" class="btn btn-success" role="button">Ətrafli -></a>
                     </div>
                   </div>
                 </div>
@@ -46,7 +43,6 @@
                       <input type="hidden" id="lat" name="lat">
                       <input type="hidden" id="lng" name="lng">
                       <input type="hidden" value="1" name="type_id">
-                    <!-- <div class="form-group"> -->
                     <label class="control-label col-sm-3" for="head">İstəyin başlığı:</label>
                     <div class="col-sm-9">
                       <input type="text" name="title" class="form-control" id="head" placeholder="Məsələn: Sökük məktəb, qırıq əşyalar və s...">
@@ -106,7 +102,7 @@
           </div>
       </div>
   </section>
-  <script type="text/javascript" src="scripts/main.js"></script>
+  <script type="text/javascript" src="/scripts/main.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initAutocomplete"
          async defer></script>
 @endsection

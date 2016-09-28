@@ -81,18 +81,16 @@
       zoom: 8,
       scrollwheel: false
     });
-     
-   
+
+
          for (var i = 0; i < myLatLng.length; i++) {
             marker = new google.maps.Marker({
             position: myLatLng[i],
             map: map,
             title: 'Hello World!'
            });
-          
-        }       
-   
-}
 
+        }
+}
         </script>
 @endsection

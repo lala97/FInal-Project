@@ -18,7 +18,9 @@ class DestekController extends Controller
 
   }
     public function show(){
-      return view('pages.destek');
+      $sonEls=Elan::orderBy('created_at','desc')->first();
+      // dd($sonEls);
+      return view('pages.destek', compact('sonEls'));
     }
 
     public function desteklerim(){

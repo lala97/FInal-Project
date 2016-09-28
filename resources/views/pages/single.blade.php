@@ -4,16 +4,14 @@
   <section id="istek">
       <div class="container">
       <ul>
-          <li class="pull-left"> <h1>Mənim <span style="color:#2AB6FF">İstəyim</span></h1></li>
+          <li class="pull-left"> <h1>Mənim <span>İstəyim</span></h1></li>
           <li class="pull-right">
-               <a href="index.php">ANA SƏHİFƏ </a>
-              <span style="color:#2ab6ff"> / </span>
-              <a href=""> İSTƏK</a>
+               <a href="index.php">ANA SƏHİFƏ / </a>
+              <a href="{{url('/istek')}}"> İSTƏK</a>
           </li>
       </ul>
       </div>
   </section>
-  <!-- naseh sencun comment yazdim. form hisseye bashlangic :) -->
   <section id="singlePage">
       <div class="container">
           <div class="row">

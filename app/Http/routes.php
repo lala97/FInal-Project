@@ -53,7 +53,7 @@ Route::get('/desteksiyahisi', 'PagesController@desteklist');//yeni
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+// Route::get('/alfagen', 'HomeController@index');
 
 Route::get('/alfagen', 'AdminController@index');
 Route::get('/lists', 'AdminController@lists');
