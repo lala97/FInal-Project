@@ -15,7 +15,5 @@
     fugiat nulla pariatur. Excepteur sint occaecat cupidatat
     non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </div>
-  <div style="margin-bottom:270px">
 
-  </div>
 @endsection

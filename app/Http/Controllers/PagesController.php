@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\City;
 use App\Elan;
+use App\User;
+use Auth;
+
 
 class PagesController extends Controller
 {
@@ -37,13 +40,19 @@ class PagesController extends Controller
       return view('pages.single',compact('single'));
     }
 
-    public function desteklist(){
-      return view('pages.ds');
+    public function desteklist()  //yeni
+    { 
+      $desteklist=Elan::all();
+      return view('pages.ds',compact('desteklist'));
     }
-
      public function profil(){
        $city=City::all();
     return view('pages.profil', compact('city'));
+    }
+    public function update(Request $req) //yeniiiiii
+    {
+      Auth::user()->update($req->all());
+      return redirect('/profil');       
     }
     public function desteklerim(){
     return view('pages.profilqatqi');

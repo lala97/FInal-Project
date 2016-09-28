@@ -37,6 +37,8 @@ Route::get('/haqqimizda', 'PagesController@haqqimizda');
 
 Route::get('/profil', 'PagesController@profil');
 
+Route::post('/profil', 'PagesController@update'); //yenilik
+
 Route::get('/desteklerim', 'DestekController@desteklerim');
 
 Route::get('/isteklerim', 'IstekController@isteklerim');
@@ -46,6 +48,8 @@ Route::get('/elaqe', 'PagesController@elaqe');
 Route::get('/single/{id}', 'PagesController@single');
 
 Route::get('/desteksiyahisi', 'PagesController@desteklist');
+
+Route::get('/desteksiyahisi', 'PagesController@desteklist');//yeni
 
 Route::auth();
 
