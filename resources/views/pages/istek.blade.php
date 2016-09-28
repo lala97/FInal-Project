@@ -29,7 +29,6 @@
                       {{csrf_field()}}
                       <input type="hidden" id="lat" name="lat">
                       <input type="hidden" id="lng" name="lng">
-                      <input type="hidden" value="2" name="type_id">
                     <label class="control-label col-sm-3" for="head">İstəyin başlığı:</label>
                     <div class="col-sm-9">
                       <input type="text" name="title" class="form-control" id="head" placeholder="Məsələn: Sökük məktəb, qırıq əşyalar və s...">

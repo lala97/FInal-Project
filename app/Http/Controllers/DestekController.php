@@ -19,7 +19,6 @@ class DestekController extends Controller
   }
     public function show(){
       $sonEls=Elan::orderBy('created_at','desc')->first();
-      // dd($sonEls);
       return view('pages.destek', compact('sonEls'));
     }
 
@@ -27,6 +26,14 @@ class DestekController extends Controller
       $destekler = Elan::all();
     return view('pages.profilqatqi',compact('destekler'));
     }
+
+         public function delete($id) //yeni gunel
+      {
+        $desteksil=Elan::find($id);
+        $desteksil->delete();
+        return back();
+      }
+
     public function store(Request $req){
 
         $direction='image';
@@ -35,7 +42,7 @@ class DestekController extends Controller
       $req->file('image')->move(public_path('image'),$filename);
 
       $data = [
-            'type_id'=>$req->type_id,
+            'type_id'=>'1', //yeni gunel
             'title'=>$req->title,
             'about'=>$req->about,
             'location'=>$req->location,

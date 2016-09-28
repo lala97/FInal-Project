@@ -7,16 +7,32 @@
         <div class="row">
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-                <img class="img-responsive" src="{{url('image/4.jpg')}}">
+               <img class="img-responsive" src="{{url('image/'.Auth::user()->avatar)}}">
 
-                <label for="upload"><i class="fa fa-arrow-circle-o-up"></i> yüklə</label>
-                <input type="file" name="sekil" id="upload" class="hidden">
+              <form id="target" action="{{url('/avatar')}}" method="post" enctype="multipart/form-data"> 
+                {{csrf_field()}}
+                                <!-- yeniiiiiiiiiiiii -->
+                    <input type="file" name="image" id="file" value="hello">
+                </form>
+                <script src="{{url('scripts/vendors/jquery.js')}}"></script>
+
+                    <script type="text/javascript">             
+                    $(document).ready(function() {
+
+                        $('#file').change(function() {
+                          $('#target').submit();
+                        });
+                        
+                        
+                    });
+                    </script>
+                    
 
                <ul class="list-unstyled">
                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><b> İstifadəçinin məlumatları</b></a></li>
                    <li><a href=""><i class="fa fa-lock" aria-hidden="true"></i> Şifrə dəyişdir</a></li>
-                   <li><a href=""><i class="fa fa-thumb-tack" aria-hidden="true"></i> İstək qeydlərim</a></li>
-                   <li><a href=""><i class="fa fa-tags" aria-hidden="true"></i> İstək qatqılarım</a></li>
+                   <li><a href="{{url('/isteklerim')}}"><i class="fa fa-thumb-tack" aria-hidden="true"></i> İstək qeydlərim</a></li>
+                   <li><a href="{{url('/desteklerim')}}"><i class="fa fa-tags" aria-hidden="true"></i> İstək qatqılarım</a></li>
                </ul>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-9  col-xs-12">

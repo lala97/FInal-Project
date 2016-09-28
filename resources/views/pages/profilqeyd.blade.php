@@ -41,7 +41,7 @@
 	                            		<th>Növ</th>
 	                            	</tr>
 	                            	@foreach($istekler as $istek)
-	                            		@if($istek->status == '1' && $istek->id = Auth::user()->id && $istek->type_id == '2')
+	                            		@if($istek->status == '1' && $istek->id = Auth::user()->user_id && $istek->type_id == '2')
 	                            			<tr>
 	                            				<td>{{$istek->title}}</td>
 	                            				<td>{{$istek->about}}</td>
@@ -51,7 +51,12 @@
 	                            				<td>{{$istek->email}}</td>
 	                            				<td>{{$istek->org}}</td>
 	                            				<td>{{$istek->nov}}</td>
+	                            				<td><a class="btn btn-primary" href="{{url('/isteksil/'.$istek->id)}}">Sil</a>                         				
 	                            			</tr>
+	                            			@else
+	                            			{{-- <tr>
+	                                  			  <td>Hələki qeyd yoxdur</td>
+	                                		</tr> --}}
 	                            		@endif
 	                            	@endforeach
 	                                <tr>

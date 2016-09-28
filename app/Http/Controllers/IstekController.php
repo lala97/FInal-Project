@@ -23,6 +23,13 @@ class IstekController extends Controller
     return view('pages.profilqeyd',compact('istekler'));
     }
 
+     public function delete($id) //yeniiiiiiiiiiiiiiiiiii  gunel
+      {
+        $isteksil=Elan::find($id);
+        $isteksil->delete();
+        return back();
+      }
+
     public function store(Request $req){
       $this->validate($req, [
           'title' => 'required|max:255',
@@ -30,13 +37,14 @@ class IstekController extends Controller
            'lng' => 'required',
     ]);
 
+
       $direction='image';
       $filetype=$req->file('image')->getClientOriginalExtension();
       $filename=rand(11111,99999).'.'.$filetype;
       $req->file('image')->move(public_path('image'),$filename);
 
       $data = [
-            'type_id'=>$req->type_id,
+            'type_id'=>'2', //yeni gunel
             'title'=>$req->title,
             'about'=>$req->about,
             'location'=>$req->location,
@@ -50,9 +58,6 @@ class IstekController extends Controller
             'nov'=>$req->nov
           ];
 
-      // $elan= new Elan;
-      // $elan->create($req->all());
-      //   return back();
        Auth::user()->elanlar()->create($data);
        return redirect('/isteklerim');
       }
