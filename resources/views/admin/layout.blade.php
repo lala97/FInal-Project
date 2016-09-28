@@ -46,7 +46,7 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="{{url('list')}}"><i class="fa fa-dashboard"></i> Umumi list</a>
+                        <a href="{{url('lists')}}"><i class="fa fa-dashboard"></i> Umumi list</a>
                     </li>
 
 

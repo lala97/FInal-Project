@@ -11,8 +11,8 @@
           <li class="pull-left"> <h1>Yeni <span style="color:#2AB6FF">dəstək</span></h1></li>
           <li class="pull-right">
                <a href="index.php">ANA SƏHİFƏ </a>
-              <span style="color:#2ab6ff"> / </span>
-              <a href=""> YENİ DƏSTƏK</a>
+              <span> / </span>
+              <a href="{{url('/destek')}}"> YENİ DƏSTƏK</a>
           </li>
       </ul>
       </div>

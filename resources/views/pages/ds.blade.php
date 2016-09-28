@@ -15,7 +15,7 @@
                     <h2>Maşınımın təmirinə yardım</h2>
                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident et dolorum fuga.At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas </p>
                     <h4>Ünvan: <b>28 may</b>&nbsp19/08/2016</h4>
-                    <a style="background-color: #6A1B9A;color:white" class="btn" href="{{URL('single')}}">Ətraflı</a>
+                    <a class="btn" href="{{URL('single')}}">Ətraflı</a>
                  </div>
               </div>
            </div>
@@ -30,23 +30,7 @@
                     <h2>Maşınımın təmirinə yardım</h2>
                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident et dolorum fuga.At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas </p>
                     <h4>Ünvan: <b>28 may</b>&nbsp19/08/2016</h4>
-                    <a style="background-color: #6A1B9A;color:white" class="btn" href="{{URL('single')}}">Ətraflı</a>
-                 </div>
-              </div>
-           </div>
-
-           <div class="col-md-6 col-sm-12">
-              <div class="row_padding">
-                 <div class="col-md-12">
-                    <div class="destek_img">
-                       <img class="img-responsive " src="image/1.jpg"/>
-                    </div>
-                 </div>
-                 <div class="col-md-12">
-                    <h2>Maşınımın təmirinə yardım</h2>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident et dolorum fuga.At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas </p>
-                    <h4>Ünvan: <b>28 may</b>&nbsp19/08/2016</h4>
-                    <a style="background-color: #6A1B9A;color:white" class="btn" href="{{URL('single')}}">Ətraflı</a>
+                    <a class="btn" href="{{URL('single')}}">Ətraflı</a>
                  </div>
               </div>
            </div>
@@ -62,7 +46,23 @@
                     <h2>Maşınımın təmirinə yardım</h2>
                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident et dolorum fuga.At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas </p>
                     <h4>Ünvan: <b>28 may</b>&nbsp19/08/2016</h4>
-                    <a style="background-color: #6A1B9A;color:white" class="btn" href="{{URL('single')}}">Ətraflı</a>
+                    <a class="btn" href="{{URL('single')}}">Ətraflı</a>
+                 </div>
+              </div>
+           </div>
+
+           <div class="col-md-6 col-sm-12">
+              <div class="row_padding">
+                 <div class="col-md-12">
+                    <div class="destek_img">
+                       <img class="img-responsive " src="image/1.jpg"/>
+                    </div>
+                 </div>
+                 <div class="col-md-12">
+                    <h2>Maşınımın təmirinə yardım</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident et dolorum fuga.At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas </p>
+                    <h4>Ünvan: <b>28 may</b>&nbsp19/08/2016</h4>
+                    <a class="btn" href="{{URL('single')}}">Ətraflı</a>
                  </div>
               </div>
            </div>
