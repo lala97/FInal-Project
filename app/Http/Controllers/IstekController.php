@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Elan;
 use Auth;
+use Session;
+
 class IstekController extends Controller
 {
   public function __construct()
   {
       $this->middleware('auth');
+      if (Auth::guest()) {
+        Session::flash('istekerror' , "İstək əlavə etmək üçün daxil olun və yaxud qeydiyyatdan keçin keçin");
+        return redirect('/login');
+      }
   }
 
     public function show(){

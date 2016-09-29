@@ -19,6 +19,11 @@
   <div class="container">
       <div class="row">
           <div class="col-md-8 col-md-offset-2">
+            @if (Session::has('istekerror'))
+              <div class="alert alert-danger" role="alert">{{Session::get('istekerror')}}</div>
+            @elseif (Session::has('destekerror'))
+              <div class="alert alert-danger" role="alert">{{Session::get('destekerror')}}</div>
+            @endif
               <div class="panel panel-default">
                   <div class="panel-body">
                       <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
