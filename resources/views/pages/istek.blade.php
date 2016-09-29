@@ -47,8 +47,7 @@
 
                     <label class="control-label col-sm-3" for="aciq">İstəyin Açıqlanması:</label>
                     <div class="col-sm-9">
-
-                      <input type="text" name="about" class="form-control" id="aciq" placeholder="Bütün detalları açıqlayın. Problem nədir? Kimlərə təsir edir?">
+                      <textarea name="about" rows="8" class="form-control" id="aciq" placeholder="Bütün detalları açıqlayın. Problem nədir? Kimlərə təsir edir?"></textarea>
                     </div>
 
 

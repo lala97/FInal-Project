@@ -68,7 +68,7 @@
 }
 
     .sag{
-        min-height: 50em;
+        min-height: 200px;
         box-shadow: 0px 0px 20px lightgray;
         padding: 20px 0;
     }
@@ -81,6 +81,11 @@
     label{
         margin-top: 20px;
     }
+
+    textarea[name="about"]{
+      margin-top: 20px;
+    }
+
     input[type="text"], input[type="file"], input[type="email"], select{
         margin-top: 20px;
         height: 42px;
