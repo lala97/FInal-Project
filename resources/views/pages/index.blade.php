@@ -46,20 +46,25 @@
           @foreach($datas as $data)
             @if($data->status=='1'&& $data->type_id=='2')
                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                  <div class="thumbnail">
-                    <a href="{{url('/single/'.$data->id)}}"><img src="{{url('/image/'.$data->image)}}" alt="News Image"></a>
-                    <div class="caption">
-                      <h3>{{$data->title}}</h3>
-                      <p>{{substr($data->about, 0,150)}}...</p>
-                      <p><a href="{{url('/single/'.$data->id)}}" class="btn center-block" role="button">Ətraflı</a></p>
-                    </div>
+                    <div class="thumbnail">
+                      <a href="{{url('/single/'.$data->id)}}"><img src="{{url('/image/'.$data->image)}}" alt="News Image"></a>
+                      <div class="caption">
+                        <div class="caption-title"><h3>{{$data->title}}</h3></div>
+                        <div class="caption-content">
+                          <p>{{substr($data->about, 0,150)}}...</p>
+                        </div>
+                        <p><a href="{{url('/single/'.$data->id)}}" class="btn center-block" role="button">Ətraflı</a></p>
+                      </div>
                   </div>
                 </div>
               @endif
           @endforeach
     </div>
-               {{-- {{ $datas->links()}} --}}
-               <a href="{{url('/isteksiyahisi')}}">Bütün İstəklər</a>
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+          <a class="btn center-block" href="{{url('/isteksiyahisi')}}">Bütün istəklərə bax <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
     </div>
   </section>
  {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initMap"async defer></script> --}}
