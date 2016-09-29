@@ -79,7 +79,10 @@
       var map = new google.maps.Map(document.getElementById('infoMap'), {
       center: {  lat: 40.100,lng: 48.800},
       zoom: 8,
-      scrollwheel: false
+      scrollwheel: false,
+      streetViewControl:false,
+      mapTypeControl:false,
+      overViewMapControl:false
     });
 
 
