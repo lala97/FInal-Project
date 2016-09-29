@@ -13,13 +13,6 @@ use Auth;
 
 class PagesController extends Controller
 {
-    // public function istek(){
-    //   return view('pages.istek');
-    // }
-
-    // public function destek(){
-    //   return view('pages.destek');
-    // }
   public function index()
   {
       $datas=Elan::paginate(8);
@@ -41,12 +34,12 @@ class PagesController extends Controller
     }
 
     public function desteklist()  //yeni
-    { 
+    {
       $desteklist=Elan::paginate(24);
       return view('pages.ds',compact('desteklist'));
     }
         public function isteklist()  //yeni
-    { 
+    {
       $isteklist=Elan::paginate(24);
       return view('pages.isteklist',compact('isteklist'));
     }
@@ -69,17 +62,17 @@ class PagesController extends Controller
        Auth::user()->update($data);
        return redirect('/profil');
       }
-    
+
 
 
     public function update(Request $req) //yeniiiiii
     {
       Auth::user()->update($req->all());
-      return redirect('/profil');       
+      return redirect('/profil');
     }
     public function desteklerim(){
     return view('pages.profilqatqi');
     }
 
-    
+
 }

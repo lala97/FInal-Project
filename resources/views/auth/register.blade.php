@@ -66,15 +66,15 @@
                             <label for="city" class="col-md-4 control-label">Şəhər/Rayon</label>
 
                             <div class="col-md-6">
-                                {{-- <input id="city" type="text" class="form-control" name="city"> --}}
-                                 <select  class="	form-control"  name="city">
+                                <input id="city" type="text" class="form-control" name="city">
+                                 {{-- <select  class="	form-control"  name="city">
                                   @foreach($city as $city)
                                     <option id="{{$city->id}}">
                                       {{$city->name}}
                                     </option>
                                   @endforeach
 
-                                </select>
+                                </select> --}}
                                 @if ($errors->has('city'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('city') }}</strong>

@@ -75,7 +75,7 @@
          @if($datamap->status=='1')
             {lat: {{$datamap->lat}},
             lng:{{$datamap->lng}},
-            title:"{{$datamap->title}}"
+            title:"<b>{{$datamap->title}}</b><br> <img style='width:200px;height:150px' src='{{url('image/'.$data->image)}}'><br><b>{{$datamap->created_at}}</b><a href='{{url('/single/'.$datamap->id)}}' class='btn pull-right'>Ətraflı</a>"
           },
           @endif
 
@@ -87,43 +87,32 @@
       zoom: 8,
       scrollwheel: false
     });
-    //   var infowindow = new google.maps.InfoWindow({
-    //   content: 'hellooooo'
-    // });
-          //     var info = new google.maps.InfoWindow();
-          //     function manyInfo(mark, infowindow) {
-          //     infowindow.setContent(mark.title);
-          //     infowindow.open(map, mark);
-          //     markers.addListener('closeclick', function() {
-          //         infowindow.setMarker(null);
-          //     });
-          //
-          // }
-        //  for (var i = 0; i < myLatLng.length; i++) {
-        //     marker = new google.maps.Marker({
-        //     position: myLatLng[i],
-        //     map: map,
-        //     title: 'Hello World!'
-        //    });
-        //    marker.addListener('click', function() {
-        //   infowindow.open(map, marker);
-        // });
-        // }
+              var info = new google.maps.InfoWindow();
+              function manyInfo(mark, infowindow) {
+              infowindow.setContent(mark.title);
+              infowindow.open(map, mark);
+              markers.addListener('closeclick', function() {
+                  infowindow.setMarker(null);
+              });
+
+          }
          markers = myLatLng.map(function(location, i) {
               return new google.maps.Marker({
                   position: location,
                   title:myLatLng[i].title,
                   // label: labels[i],
+                  icon: 'https://lh3.googleusercontent.com/NU7oZ7XSozdZYdGnZs_64cn0U6hwrkKNfAr-cqFScO40nEgyIcRtvXuzSAZQn_9VqsY=w40',
+
                   id: i,
                   animation: google.maps.Animation.DROP
               });
 
           });
-          // for (var i = 0; i < markers.length; i++) {
-          //     google.maps.event.addListener(markers[i], 'click', function() {
-          //         manyInfo(this, info);
-          //     });
-          // }
+          for (var i = 0; i < markers.length; i++) {
+              google.maps.event.addListener(markers[i], 'click', function() {
+                  manyInfo(this, info);
+              });
+          }
           var markerCluster = new MarkerClusterer(map, markers, {
             imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
         });
