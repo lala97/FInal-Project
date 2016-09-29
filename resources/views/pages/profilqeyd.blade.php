@@ -15,14 +15,14 @@
 							 @else
 								 <img class="img-responsive" src="{{url('image/prof.png')}}">
 							 @endif
-	                <label for="upload"><i class="fa fa-arrow-circle-o-up"></i> yüklə</label>
+	                <label for="upload"><i class="fa fa-arrow-circle-o-up"></i> Yüklə</label>
 	                <input type="file" name="sekil" id="upload" class="hidden">
 
 	               <ul class="list-unstyled">
 	                   <li><a href="{{url('/profil')}}"><i class="fa fa-user" aria-hidden="true"></i><b> İstifadəçinin məlumatları</b></a></li>
 	                   <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i> Şifrə dəyişdir</a></li>
 	                   <li><a href="{{url('/isteklerim')}}"><i class="fa fa-thumb-tack" aria-hidden="true"></i> İstək qeydlərim</a></li>
-	                   <li><a href="{{url('/desteklerim')}}"><i class="fa fa-tags" aria-hidden="true"></i> İstək qatqılarım</a></li>
+	                   <li><a href="{{url('/desteklerim')}}"><i class="fa fa-tags" aria-hidden="true"></i> Dəstəklərim</a></li>
 	               </ul>
 	            </div>
 	            <div class="col-lg-8 col-md-8 col-sm-9  col-xs-12">
@@ -37,26 +37,16 @@
 	                            		<th>Başlıq</th>
 	                            		<th>Haqqında</th>
 																	<th>Şəkil</th>
-	                            		{{-- <th>Ünvan</th>
-	                            		<th>Ad</th>
-	                            		<th>Nömrə</th>
-	                            		<th>Email</th>
-	                            		<th>Qurum</th>
-	                            		<th>Növ</th> --}}
+																	<th>Tənzimləmə</th>
 	                            	</tr>
 	                            	@foreach($istekler as $istek)
-	                            		@if($istek->status == '1' && $istek->id = Auth::user()->user_id && $istek->type_id == '2')
+	                            		@if($istek->status == '1' && $istek->user_id = Auth::user()->id && $istek->type_id == '2')
 	                            			<tr>
 	                            				<td>{{$istek->title}}</td>
-																			<td>{{$istek->about}}</td>
-	                            				<td>{{$istek->image}}</td>
-	                            				{{-- <td>{{$istek->location}}</td>
-	                            				<td>{{$istek->name}}</td>
-	                            				<td>{{$istek->phone}}</td>
-	                            				<td>{{$istek->email}}</td>
-	                            				<td>{{$istek->org}}</td>
-	                            				<td>{{$istek->nov}}</td> --}}
-	                            				<td><a class="btn btn-primary" href="{{url('/isteksil/'.$istek->id)}}">Sil</a>
+																			<td>{{substr($istek->about,0,100)}}...</td>
+	                            				<td><img class="img-responsive" src="{{url('image/'.$istek->image)}}"></td>
+	                            				<td><a class="btn btn-danger" href="{{url('/isteksil/'.$istek->id)}}">Sil</a>
+																		    	<a class="btn btn-info" href="{{url('/single/'.$istek->id)}}">Oxu</a></td>
 	                            			</tr>
 	                            			@else
 	                            			{{-- <tr>
@@ -77,4 +67,14 @@
 	        </div>
 	    </div>
 	</section>
+	<script src="{{url('scripts/vendors/jquery.js')}}"></script>
+
+			<script type="text/javascript">
+			$(document).ready(function() {
+
+					$('#file').change(function() {
+						$('#target').submit();
+					});
+			});
+			</script>
 @endsection

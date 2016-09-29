@@ -14,13 +14,13 @@
                      @else
                        <img class="img-responsive" src="{{url('image/prof.png')}}">
                      @endif
-                        <label for="upload"><i class="fa fa-arrow-circle-o-up"></i> yüklə</label>
-                        <input type="file" name="sekil" id="upload" class="hidden">
+                        <label for="file"><i class="fa fa-arrow-circle-o-up"></i> yüklə</label>
+                        <input type="file" name="image" id="file" class="hidden">
                         <ul class="list-unstyled">
                             <li><a href="{{url('/profil')}}"><i class="fa fa-user" aria-hidden="true"></i><b> İstifadəçinin məlumatları</b></a></li>
                             <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i> Şifrə dəyişdir</a></li>
                             <li><a href="{{url('/isteklerim')}}"><i class="fa fa-thumb-tack" aria-hidden="true"></i> İstək qeydlərim</a></li>
-                            <li><a href="{{url('/desteklerim')}}"><i class="fa fa-tags" aria-hidden="true"></i> İstək qatqılarım</a></li>
+                            <li><a href="{{url('/desteklerim')}}"><i class="fa fa-tags" aria-hidden="true"></i> Dəstəklərim</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-9  col-xs-12">
@@ -35,11 +35,6 @@
                                             <th>Başlıq</th>
                                             <th>Haqqında</th>
                                             <th>Şəkil</th>
-                                            {{-- <th>Ad</th>
-                                            <th>Nömrə</th>
-                                            <th>Email</th>
-                                            <th>Qurum</th>
-                                            <th>Növ</th> --}}
                                         </tr>
                                         @foreach($destekler as $destek)
                                             @if($destek->status == '1' && $destek->user_id = Auth::user()->id && $destek->type_id == '1')
@@ -47,12 +42,6 @@
                                                     <td>{{$destek->title}}</td>
                                                     <td>{{$destek->about}}</td>
                                                     <td>{{$destek->image}}</td>
-                                                    {{-- <td>{{$destek->location}}</td>
-                                                    <td>{{$destek->name}}</td>
-                                                    <td>{{$destek->phone}}</td>
-                                                    <td>{{$destek->email}}</td>
-                                                    <td>{{$destek->org}}</td>
-                                                    <td>{{$destek->nov}}</td> --}}
                                                     <td><a class="btn btn-primary" href="{{url('/desteksil/'.$destek->id)}}">Sil</a></td>
 
                                                 </tr>
@@ -68,5 +57,14 @@
             </div>
         </div>
     </section>
+    <script src="{{url('scripts/vendors/jquery.js')}}"></script>
 
+    		<script type="text/javascript">
+    		$(document).ready(function() {
+
+    				$('#file').change(function() {
+    					$('#target').submit();
+    				});
+    		});
+    		</script>
 @endsection

@@ -33,7 +33,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12 padding0">
-            <div id="infoMap" style="width:100%;height:500px"></div>
+            <div id="infoMap"></div>
         </div>
       </div>
     </div>
@@ -59,38 +59,76 @@
           @endforeach
     </div>
                {{-- {{ $datas->links()}} --}}
-               <a href="{{url('/isteksiyahisi')}}">Bütün İstəklər</a>
+               <a href="{{url('/isteksiyahisi')}}" class="pull-right"><h4>Bütün İstəklər <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h4></a>
     </div>
   </section>
  {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initMap"async defer></script> --}}
  <script type="text/javascript" src="scripts/main.js"></script>
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&callback=initMap"
         async defer></script>
-
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+      </script>
         <script type="text/javascript">
+             var markers = [];
       function initMap() {
       var myLatLng = [
       @foreach($datamaps as $datamap)
          @if($datamap->status=='1')
-            {lat: {{$datamap->lat}}, lng:{{$datamap->lng}} },
+            {lat: {{$datamap->lat}},
+            lng:{{$datamap->lng}},
+            title:"{{$datamap->title}}"
+          },
           @endif
+
       @endforeach
       ];
+
       var map = new google.maps.Map(document.getElementById('infoMap'), {
       center: {  lat: 40.100,lng: 48.800},
       zoom: 8,
       scrollwheel: false
     });
+    //   var infowindow = new google.maps.InfoWindow({
+    //   content: 'hellooooo'
+    // });
+          //     var info = new google.maps.InfoWindow();
+          //     function manyInfo(mark, infowindow) {
+          //     infowindow.setContent(mark.title);
+          //     infowindow.open(map, mark);
+          //     markers.addListener('closeclick', function() {
+          //         infowindow.setMarker(null);
+          //     });
+          //
+          // }
+        //  for (var i = 0; i < myLatLng.length; i++) {
+        //     marker = new google.maps.Marker({
+        //     position: myLatLng[i],
+        //     map: map,
+        //     title: 'Hello World!'
+        //    });
+        //    marker.addListener('click', function() {
+        //   infowindow.open(map, marker);
+        // });
+        // }
+         markers = myLatLng.map(function(location, i) {
+              return new google.maps.Marker({
+                  position: location,
+                  title:myLatLng[i].title,
+                  // label: labels[i],
+                  id: i,
+                  animation: google.maps.Animation.DROP
+              });
 
-
-         for (var i = 0; i < myLatLng.length; i++) {
-            marker = new google.maps.Marker({
-            position: myLatLng[i],
-            map: map,
-            title: 'Hello World!'
-           });
-
-        }
+          });
+          // for (var i = 0; i < markers.length; i++) {
+          //     google.maps.event.addListener(markers[i], 'click', function() {
+          //         manyInfo(this, info);
+          //     });
+          // }
+          var markerCluster = new MarkerClusterer(map, markers, {
+            imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+        });
 }
         </script>
+
 @endsection
