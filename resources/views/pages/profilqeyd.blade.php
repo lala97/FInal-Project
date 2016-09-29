@@ -10,8 +10,11 @@
 
 	        <form>
 	            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-	                <img class="img-responsive" src="{{url('image/4.jpg')}}">
-
+								@if(Auth::user()->avatar)
+									<img class="img-responsive" src="{{url('image/'.Auth::user()->avatar)}}">
+							 @else
+								 <img class="img-responsive" src="{{url('image/prof.png')}}">
+							 @endif
 	                <label for="upload"><i class="fa fa-arrow-circle-o-up"></i> yüklə</label>
 	                <input type="file" name="sekil" id="upload" class="hidden">
 
@@ -33,25 +36,27 @@
 	                            	<tr>
 	                            		<th>Başlıq</th>
 	                            		<th>Haqqında</th>
-	                            		<th>Ünvan</th>
+																	<th>Şəkil</th>
+	                            		{{-- <th>Ünvan</th>
 	                            		<th>Ad</th>
 	                            		<th>Nömrə</th>
 	                            		<th>Email</th>
 	                            		<th>Qurum</th>
-	                            		<th>Növ</th>
+	                            		<th>Növ</th> --}}
 	                            	</tr>
 	                            	@foreach($istekler as $istek)
 	                            		@if($istek->status == '1' && $istek->id = Auth::user()->user_id && $istek->type_id == '2')
 	                            			<tr>
 	                            				<td>{{$istek->title}}</td>
-	                            				<td>{{$istek->about}}</td>
-	                            				<td>{{$istek->location}}</td>
+																			<td>{{$istek->about}}</td>
+	                            				<td>{{$istek->image}}</td>
+	                            				{{-- <td>{{$istek->location}}</td>
 	                            				<td>{{$istek->name}}</td>
 	                            				<td>{{$istek->phone}}</td>
 	                            				<td>{{$istek->email}}</td>
 	                            				<td>{{$istek->org}}</td>
-	                            				<td>{{$istek->nov}}</td>
-	                            				<td><a class="btn btn-primary" href="{{url('/isteksil/'.$istek->id)}}">Sil</a>                         				
+	                            				<td>{{$istek->nov}}</td> --}}
+	                            				<td><a class="btn btn-primary" href="{{url('/isteksil/'.$istek->id)}}">Sil</a>
 	                            			</tr>
 	                            			@else
 	                            			{{-- <tr>

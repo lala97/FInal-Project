@@ -23,7 +23,7 @@
                 <div id="map"></div>
                 <div class="destek">
                   <!-- Soldakı bütün istəklər -->
-                 {{--  <div class="thumbnail" >
+                  <div class="thumbnail" >
                     <img src="image/{{$sonEls->image}}">
                     <div class="caption">
                       <h4 class="text-center">{{$sonEls->title}}</h4>
@@ -32,7 +32,7 @@
                       <a href="{{url('/desteksiyahisi')}}" class="btn btn-success" role="button">Bütün İstəklər</a>
                       <a href="" class="btn btn-success" role="button">Ətrafli -></a>
                     </div>
-                  </div> --}}
+                  </div> 
                 </div>
               </div>
 

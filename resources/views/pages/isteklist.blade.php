@@ -6,7 +6,7 @@
         <div class="row">
         @foreach($isteklist as $istek)
         @if($istek->type_id=='2')
-           <div class="col-md-6 col-sm-12">
+           <div class="col-md-5 col-sm-12">
               <div class="row_padding">
                  <div class="col-md-12">
                     <div class="destek_img">
@@ -15,9 +15,9 @@
                  </div>
                  <div class="col-md-12">
                     <h2>{{$istek->title}}</h2>
-                    <p>{{$istek->about}}</p>
-                    <h4>Ünvan: <b>{{$istek->location}}</b>&nbsp19/08/2016</h4>
-                    <a style="background-color: #6A1B9A;color:white" class="btn" href="{{URL('single')}}">Ətraflı</a>
+                    <p>{{substr($istek->about, 0,150)}}...</p>
+                    <h4><b>Ünvan:</b> {{$istek->location}}</h4>
+                    <a class="btn btn-info" href="{{URL('single/'.$istek->id)}}">Ətraflı</a>
                  </div>
               </div>
            </div>
@@ -25,7 +25,7 @@
           @endforeach
           {{ $isteklist->links()}}
         </div>
-    {{--     <nav aria-label="Page navigation">
+        {{-- <nav aria-label="Page navigation">
           <ul class="pagination pull-right">
             <li class="page-item">
               <a class="page-link" href="#" aria-label="Previous">

@@ -16,8 +16,8 @@
                  <div class="col-md-12">
                     <h2>{{$destek->title}}</h2>
                     <p>{{$destek->about}}</p>
-                    <h4>Ünvan: <b>{{$destek->location}}</b>&nbsp19/08/2016</h4>
-                    <a style="background-color: #6A1B9A;color:white" class="btn" href="{{URL('single')}}">Ətraflı</a>
+                    <h4><b>Ünvan:</b>{{$destek->location}}</h4>
+                    <a class="btn btn-info" href="{{URL('single')}}">Ətraflı</a>
                  </div>
               </div>
            </div>

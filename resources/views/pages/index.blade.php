@@ -43,7 +43,6 @@
   <section id="news">
     <div class="container">
       <div class="row">
-
           @foreach($datas as $data)
             @if($data->status=='1'&& $data->type_id=='2')
                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
@@ -60,8 +59,7 @@
           @endforeach
     </div>
                {{-- {{ $datas->links()}} --}}
-
-               <a class="btn btn-primary" href="{{url('/isteksiyahisi')}}">Bütün İstəklər</a>
+               <a href="{{url('/isteksiyahisi')}}">Bütün İstəklər</a>
     </div>
   </section>
  {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initMap"async defer></script> --}}

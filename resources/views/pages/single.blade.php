@@ -20,8 +20,9 @@
               </div>
               <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                 <h1 class="text-center">{{$single->title}}</h1>
-                <p class="text-center">{{$single->about}}</p>
-                <a href="#"></a>
+                <p class="text-justify">{{$single->about}}</p>
+                  <p class="text-right"><b>Ünvan: </b>{{$single->location}}</p>
+                  <a href="{{url('')}}" class="btn btn-info pull-right" role="button"><i class="fa fa-check" aria-hidden="true"></i> Destek olmaq istəyirəm</a>
               </div>
           </div>
       </div>

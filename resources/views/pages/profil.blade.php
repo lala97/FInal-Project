@@ -7,26 +7,29 @@
         <div class="row">
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-               <img class="img-responsive" src="{{url('image/'.Auth::user()->avatar)}}">
-
-              <form id="target" action="{{url('/avatar')}}" method="post" enctype="multipart/form-data"> 
+							@if(Auth::user()->avatar)
+					    	<img class="img-responsive" src="{{url('image/'.Auth::user()->avatar)}}">
+				     @else
+					  	 <img class="img-responsive" src="{{url('image/prof.png')}}">
+				     @endif
+              <form id="target" action="{{url('/avatar')}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                                 <!-- yeniiiiiiiiiiiii -->
                     <input type="file" name="image" id="file" value="hello">
                 </form>
                 <script src="{{url('scripts/vendors/jquery.js')}}"></script>
 
-                    <script type="text/javascript">             
+                    <script type="text/javascript">
                     $(document).ready(function() {
 
                         $('#file').change(function() {
                           $('#target').submit();
                         });
-                        
-                        
+
+
                     });
                     </script>
-                    
+
 
                <ul class="list-unstyled">
                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><b> İstifadəçinin məlumatları</b></a></li>
@@ -71,7 +74,7 @@
                                         @endforeach
                                     </td>
                                     </select>
-                                </tr>                              
+                                </tr>
                             </tbody>
                         </table>
 
