@@ -24,15 +24,17 @@
                 <div class="destek">
                   <!-- Soldakı bütün istəklər -->
                   <div class="thumbnail" >
-                    <img src="image/{{$sonEls->image}}">
-                    <div class="caption">
-                      <h4 class="text-center">{{$sonEls->title}}</h4>
-                      <p>{{substr($sonEls->about, 0,200)}}...</p>
-                      <p class="text-right"><b>{{$sonEls->created_at}}</b></p>
-                      <a href="{{url('/desteksiyahisi')}}" class="btn btn-success" role="button">Bütün İstəklər</a>
-                      <a href="" class="btn btn-success" role="button">Ətrafli -></a>
-                    </div>
-                  </div> 
+                    @if($sonEls->type_id=='2' && $sonEls->status=='1')
+                     <img src="image/{{$sonEls->image}}">
+                       <div class="caption">
+                         <h4 class="text-center">{{$sonEls->title}}</h4>
+                         <p>{{substr($sonEls->about, 0,200)}}...</p>
+                         <p class="text-right"><b>{{$sonEls->created_at}}</b></p>
+                         <a href="{{url('/desteksiyahisi')}}" class="btn btn-success" role="button">Bütün İstəklər</a>
+                         <a href="" class="btn btn-success" role="button">Ətrafli -></a>
+                       </div>
+                   @endif
+                  </div>
                 </div>
               </div>
 
