@@ -36,8 +36,8 @@ class DestekController extends Controller
       }
 
     public function store(Request $req){
-
-        $direction='image';
+      Session::flash('destekadded' , "Dəstəyiniz uğurla əlavə olundu və yoxlamadan keçəndən sonra dərc olunacaq.");
+      $direction='image';
       $filetype=$req->file('image')->getClientOriginalExtension();
       $filename=rand(11111,99999).'.'.$filetype;
       $req->file('image')->move(public_path('image'),$filename);
