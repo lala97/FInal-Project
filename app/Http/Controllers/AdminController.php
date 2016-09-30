@@ -7,13 +7,55 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Elan;
 use App\User;
-
+use Auth;
 class AdminController extends Controller
 {
+  public function _construct()
+  {
+
+  }
+
   public function index()
   {
-     return view('admin.layout');
+     return view('admin.index');
   }
+  public function login()
+  {
+     return view('auth.login-admin');
+  }
+
+  public function postLogin(Request $request)
+  {
+
+    $validator= validator($request->all(), [
+      'email' => 'required|min:3|max:100',
+      'password' => 'required|min:3|max:100',
+  ]);
+
+    //  return view('admin.index');
+    if ($validator->fails() ) {
+        return redirect('/alfagen/login')
+                ->withErrors($validator)
+                ->withInput();
+    }
+    $details=['email' => $request->get('email'), 'password' => $request->get('password')];
+    if (auth()->guard('admin')->attempt($details) )
+    {
+      return redirect('/alfagen');
+    }
+    else
+    {
+      return redirect('/alfagen/login')
+              ->withErrors(['errors' => 'Duzgun deyl!'])
+              ->withInput();
+    }
+  }
+    public function logout()
+    {
+      auth()->guard('admin')->logout();
+      return redirect('/alfagen/login');
+    }
+
 
   public function lists()
   {

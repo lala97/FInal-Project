@@ -16,7 +16,14 @@ use App\User;
 use App\City;
 
 
-
+Route::group(['middleware' => 'admin'],function(){
+  Route::group(['middleware' => 'auth:admin'],function(){
+      Route::get('/alfagen', 'AdminController@index');
+});
+  Route::get('/alfagen/login', 'AdminController@login');
+  Route::post('/alfagen/postLogin', 'AdminController@postLogin');
+  Route::get('/alfagen/logout', 'AdminController@logout');
+});
 Route::get('/test/{id}',function($id)
 {
       $data=Elan::find($id);
@@ -43,7 +50,7 @@ Route::get('/profil', 'PagesController@profil');
 
 Route::post('/profil', 'PagesController@update');
 
-Route::post('/avatar', 'PagesController@avatar');//yeniii 
+Route::post('/avatar', 'PagesController@avatar');//yeniii
 
 Route::get('/desteklerim', 'DestekController@desteklerim');
 
@@ -55,13 +62,12 @@ Route::get('/single/{id}', 'PagesController@single');
 
 Route::get('/desteksiyahisi', 'PagesController@desteklist');
 
-Route::get('/isteksiyahisi', 'PagesController@isteklist'); //istek list olmalidi yeqin. 
+Route::get('/isteksiyahisi', 'PagesController@isteklist'); //istek list olmalidi yeqin.
 
 Route::auth();
 
 //admin part
 
-Route::get('/alfagen', 'AdminController@index');
 Route::get('/lists', 'AdminController@lists');
 
 Route::get('/isteklist', 'AdminController@isteklist');

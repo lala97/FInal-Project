@@ -34,7 +34,7 @@
                         <li><a href="{{url('/profil')}}"><i class="fa fa-user fa-fw"></i> Profilim</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="{{url('/logout')}}"><i class="fa fa-sign-out fa-fw"></i> Çıxış</a>
+                        <li><a href="{{url('alfagen/logout')}}"><i class="fa fa-sign-out fa-fw"></i> Çıxış</a>
                         </li>
                     </ul>
             </ul>
