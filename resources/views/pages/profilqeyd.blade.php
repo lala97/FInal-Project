@@ -26,6 +26,9 @@
 	               </ul>
 	            </div>
 	            <div class="col-lg-8 col-md-8 col-sm-9  col-xs-12">
+								@if (Session::has('istekadded'))
+		              <div class="alert alert-success" role="alert">{{Session::get('istekadded')}}</div>
+								@endif
 	                <div class="profilime panel panel-primary">
 	                    <div class="panel-heading">
 	                        <h4><i class="fa fa-thumb-tack" aria-hidden="true"></i> Ehtiyaclarim</h4>

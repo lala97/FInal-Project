@@ -18,7 +18,18 @@
 @import "partials/ds";
 @import "partials/single";
 
+@font-face {
+ font-family: 'myfont';
+ src: url("../fonts/Roboto-Bold.eot");
+ src: local("Roboto-Bold"),
+ url("../fonts/Roboto-Bold.woff") format("woff"),
+ url("../fonts/Roboto-Bold.ttf") format("truetype"),
+ url("../fonts/Roboto-Bold.svg") format("svg");
+ font-weight: normal;
+ font-style: normal; }
+
 body {
+    font-family: 'myfont' !important;
     font-weight: 400;
     font-size: 14px;
 }
