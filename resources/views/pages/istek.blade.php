@@ -29,20 +29,20 @@
                       {{csrf_field()}}
                       <input type="hidden" id="lat" name="lat">
                       <input type="hidden" id="lng" name="lng">
-                    <label class="control-label col-sm-3" for="head">Başlıq <span>30 simvol</span></label>
-                    <div class="col-sm-9">
-                      <input type="text" name="title" class="form-control" id="head" placeholder="Məsələn: Sökük məktəb, qırıq əşyalar və s...">
-                    </div>
+                      <label class="control-label col-sm-3" for="head">Başlıq <span>*</span></label>
+                      <div class="col-sm-9">
+                        <input type="text" name="title" class="form-control" maxlength="30" id="head" placeholder="Məsələn: Sökük məktəb, qırıq əşyalar və s...">
+                      </div>
 
-                    <label class="control-label col-sm-3" for="adres">Ünvan<span>*</span></label>
-                    <div class="col-sm-9">
-                      <input name="location" type="text" class="form-control" id="adres" placeholder="İstəyinizin və ya yaşadığınız yerin ünvanı">
-                    </div>
+                      <label class="control-label col-sm-3" for="adres">Ünvan<span>*</span></label>
+                      <div class="col-sm-9">
+                        <input name="location" type="text" class="form-control" id="adres" placeholder="İstəyinizin və ya yaşadığınız yerin ünvanı">
+                      </div>
 
-                    <label class="control-label col-sm-3" for="qurum">Təşkilat adı <span>Əgər varsa</span></label>
-                    <div class="col-sm-9">
-                      <input name="org" type="text" class="form-control" id="org" placeholder="Təskilat,Universitet ve s">
-                    </div>
+                      <label class="control-label col-sm-3" for="qurum">Təşkilat adı <span>*</span></label>
+                      <div class="col-sm-9">
+                        <input name="org" type="text" class="form-control" id="org" placeholder="Əgər varsa təşkilat,universitet və s daxil edin.">
+                      </div>
 
 
                     <label class="control-label col-sm-3" for="aciq">Açıqlama<span>*</span></label>
