@@ -10,7 +10,6 @@ use App\City;
     <title>@yield('title')</title>
     <!-- Bootstrap və Fontawesome sass ilə qoşulub -->
     <link rel="stylesheet" href="{{url('css/app.css')}}">
-    <script src="scripts/vendors/jquery.js"></script>
 </head>
 <body>
 <!-- CONTACT SECTION START -->
@@ -97,7 +96,7 @@ use App\City;
   <div class="container">
     <div class="row">
       <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3">
-        <img src="{{url('image/logo.png')}}" alt="logo" />
+        <img src="{{url('/image/logo.png')}}" alt="logo" />
       </div>
       <div class="col-lg-6 col-md-6 col-sm-4 col-xs-9">
         <p>
@@ -111,8 +110,10 @@ use App\City;
   </div>
 </div>
 
-<script src="scripts/vendors/bootstrap.min.js"></script>
-<script src="scripts/vendors/modernizr.min.js"></script>
+<script src="{{url('/scripts/vendors/jquery.js')}}"></script>
+<script src="{{url('/scripts/vendors/bootstrap.min.js')}}"></script>
+<script src="{{url('/scripts/vendors/modernizr.min.js')}}"></script>
+<script src="{{url('/scripts/main.js')}}"></script>
 {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initAutocomplete"async defer></script>
 <script src="scripts/main.js"></script> --}}
 </body>

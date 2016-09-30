@@ -1,3 +1,15 @@
+//============DƏSTƏK OLMAQ İSTƏYİRƏM BUTTONU ==============================================
+  $(document).ready(function() {
+    $(".destek-ol-message").hide();
+    $(".destek-ol-button").click(function(){
+        $(".destek-ol-message").slideToggle();
+
+    });
+  });
+
+
+
+
 //index sehifesinde map ucun
 
 // function initMap() {

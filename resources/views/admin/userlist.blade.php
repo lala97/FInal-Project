@@ -40,7 +40,7 @@
                                                       <td>{{$user->city_id}}</td>
                                                       <td>{{$user->username}}</td>
                                                       <td>{{$user->phone}}</td>
-                                                      <td>{{$user->name}}2</td>
+                                                      <td>{{$user->name}}</td>
                                                       <td>{{$user->email}}</td>
                                                   </tr>
                                                 @endforeach
@@ -54,7 +54,7 @@
                           </div>
                       </div>
                       <!--End Advanced Tables -->
-                
+
 
           </div>
 
