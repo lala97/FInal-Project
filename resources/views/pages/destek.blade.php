@@ -29,9 +29,8 @@
                        <div class="caption">
                          <h4 class="text-center">{{$sonEls->title}}</h4>
                          <p>{{substr($sonEls->about, 0,200)}}...</p>
-                         <p class="text-right"><b>{{$sonEls->created_at}}</b></p>
-                         <a href="{{url('/desteksiyahisi')}}" class="btn btn-success" role="button">Bütün İstəklər</a>
-                         <a href="" class="btn btn-success" role="button">Ətrafli -></a>
+                         <div class="col-lg-6"><a href="{{url('/isteksiyahisi')}}" class="btn btn-success center-block" role="button">Bütün İstəklər</a></div>
+                         <div class="col-lg-6"><a href="" class="btn btn-success center-block" role="button">Ətraflı</a></div>
                        </div>
                    @endif
                   </div>
@@ -41,58 +40,56 @@
               <div class="col-lg-8">
                 <div class="sag">
                   <form action="{{url('/destek')}}" method="post" enctype="multipart/form-data">
-                      {{csrf_field()}}
-                      <input type="hidden" id="lat" name="lat">
-                      <input type="hidden" id="lng" name="lng">
-                      <input type="hidden" value="1" name="type_id">
-                    <label class="control-label col-sm-3" for="head">İstəyin başlığı:</label>
-                    <div class="col-sm-9">
-                      <input type="text" name="title" class="form-control" id="head" placeholder="Məsələn: Sökük məktəb, qırıq əşyalar və s...">
-                    </div>
+                    {{csrf_field()}}
+                    <input type="hidden" id="lat" name="lat">
+                    <input type="hidden" id="lng" name="lng">
+                  <label class="control-label col-sm-3" for="head">Başlıq <span>30 simvol</span></label>
+                  <div class="col-sm-9">
+                    <input type="text" name="title" class="form-control" id="head" placeholder="Məsələn: Sökük məktəb, qırıq əşyalar və s...">
+                  </div>
 
-                    <label class="control-label col-sm-3" for="adres">İstəyin ünvanı:</label>
-                    <div class="col-sm-9">
-                      <input name="location" type="text" class="form-control" id="adres" placeholder="İstəyinizin və ya yaşadığınız yerin ünvanı">
-                    </div>
+                  <label class="control-label col-sm-3" for="adres">Ünvan<span>*</span></label>
+                  <div class="col-sm-9">
+                    <input name="location" type="text" class="form-control" id="adres" placeholder="İstəyinizin və ya yaşadığınız yerin ünvanı">
+                  </div>
 
-                    <label class="control-label col-sm-3" for="qurum">Qurum isə qeyd edin:</label>
-                    <div class="col-sm-9">
-                      <input name="org" type="text" class="form-control" id="org" placeholder="Təskilat,Universitet ve s">
-                    </div>
-
-
-                    <label class="control-label col-sm-3" for="aciq">İstəyin Açıqlanması:</label>
-                    <div class="col-sm-9">
-
-                      <input type="text" name="about" class="form-control" id="aciq" placeholder="Bütün detalları açıqlayın. Problem nədir? Kimlərə təsir edir?">
-                    </div>
+                  <label class="control-label col-sm-3" for="qurum">Təşkilat adı <span>Əgər varsa</span></label>
+                  <div class="col-sm-9">
+                    <input name="org" type="text" class="form-control" id="org" placeholder="Təskilat,Universitet ve s">
+                  </div>
 
 
-                    <label class="control-label col-sm-3" for="pic">Şəkil:</label>
-                    <div class="col-sm-9">
-                      <input type="file" name="image" class="form-control" id="pic">
-                    </div>
-
-                    <label class="control-label col-sm-3" for="name">Ad Soyad:</label>
-                    <div class="col-sm-9">
-                      <input type="text" name="name" class="form-control" id="name" placeholder="İstək məsələsində əlaqə quracağımız şəxs">
-                    </div>
-
-                    <label class="control-label col-sm-3" for="numb">Telefon:</label>
-                    <div class="col-sm-9">
-                      <input type="text" name="phone" class="form-control" id="numb" placeholder="Şəxsin telefon nömrəsi">
-                    </div>
+                  <label class="control-label col-sm-3" for="aciq">Açıqlama<span>*</span></label>
+                  <div class="col-sm-9">
+                    <textarea name="about" rows="8" class="form-control" id="aciq" placeholder="İstəyin detalları"></textarea>
+                  </div>
 
 
-                    <label class="control-label col-sm-3" for="mail">Email:</label>
-                    <div class="col-sm-9">
-                      <input type="email" name="email" class="form-control" id="mail" placeholder="Şəxsin elektron ünvanı">
-                    </div>
+                  <label class="control-label col-sm-3" for="pic">Şəkil<span>*</span></label>
+                  <div class="col-sm-9">
+                    <input type="file" name="image" class="form-control" id="pic">
+                  </div>
 
-                    <label class="control-label col-sm-3" for="nov">Növ:</label>
-                    <div class="col-sm-9">
-                      <input type="text" name="nov" class="form-control" id="nov" placeholder="Dəstəyin növü">
-                    </div>
+                  <label class="control-label col-sm-3" for="name">Ad , Soyad<span>*</span></label>
+                  <div class="col-sm-9">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="İstək məsələsində əlaqə qurulacaq şəxs">
+                  </div>
+
+                  <label class="control-label col-sm-3" for="numb">Telefon<span>*</span></label>
+                  <div class="col-sm-9">
+                    <input type="text" name="phone" class="form-control" id="numb" placeholder="Şəxsin telefon nömrəsi">
+                  </div>
+
+
+                  <label class="control-label col-sm-3" for="mail">Email<span>*</span></label>
+                  <div class="col-sm-9">
+                    <input type="email" name="email" class="form-control" id="mail" placeholder="Şəxsin elektron ünvanı">
+                  </div>
+
+                  <label class="control-label col-sm-3" for="nov">Növ<span>*</span></label>
+                  <div class="col-sm-9">
+                    <input type="text" name="nov" class="form-control" id="nov" placeholder="Dəstəyin nəyə olduğunu bildirin.Məsələn, məktəb,ev və s.">
+                  </div>
 
                     <!-- </div> -->
                     <div class="col-sm-2 col-sm-offset-3">

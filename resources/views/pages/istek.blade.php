@@ -29,52 +29,52 @@
                       {{csrf_field()}}
                       <input type="hidden" id="lat" name="lat">
                       <input type="hidden" id="lng" name="lng">
-                    <label class="control-label col-sm-3" for="head">İstəyin başlığı:</label>
+                    <label class="control-label col-sm-3" for="head">Başlıq <span>30 simvol</span></label>
                     <div class="col-sm-9">
                       <input type="text" name="title" class="form-control" id="head" placeholder="Məsələn: Sökük məktəb, qırıq əşyalar və s...">
                     </div>
 
-                    <label class="control-label col-sm-3" for="adres">İstəyin ünvanı:</label>
+                    <label class="control-label col-sm-3" for="adres">Ünvan<span>*</span></label>
                     <div class="col-sm-9">
                       <input name="location" type="text" class="form-control" id="adres" placeholder="İstəyinizin və ya yaşadığınız yerin ünvanı">
                     </div>
 
-                    <label class="control-label col-sm-3" for="qurum">Qurum isə qeyd edin:</label>
+                    <label class="control-label col-sm-3" for="qurum">Təşkilat adı <span>Əgər varsa</span></label>
                     <div class="col-sm-9">
                       <input name="org" type="text" class="form-control" id="org" placeholder="Təskilat,Universitet ve s">
                     </div>
 
 
-                    <label class="control-label col-sm-3" for="aciq">İstəyin Açıqlanması:</label>
+                    <label class="control-label col-sm-3" for="aciq">Açıqlama<span>*</span></label>
                     <div class="col-sm-9">
-                      <textarea name="about" rows="8" class="form-control" id="aciq" placeholder="Bütün detalları açıqlayın. Problem nədir? Kimlərə təsir edir?"></textarea>
+                      <textarea name="about" rows="8" class="form-control" id="aciq" placeholder="İstəyin detalları"></textarea>
                     </div>
 
 
-                    <label class="control-label col-sm-3" for="pic">Şəkil:</label>
+                    <label class="control-label col-sm-3" for="pic">Şəkil<span>*</span></label>
                     <div class="col-sm-9">
                       <input type="file" name="image" class="form-control" id="pic">
                     </div>
 
-                    <label class="control-label col-sm-3" for="name">Ad Soyad:</label>
+                    <label class="control-label col-sm-3" for="name">Ad , Soyad<span>*</span></label>
                     <div class="col-sm-9">
-                      <input type="text" name="name" class="form-control" id="name" placeholder="İstək məsələsində əlaqə quracağımız şəxs">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="İstək məsələsində əlaqə qurulacaq şəxs">
                     </div>
 
-                    <label class="control-label col-sm-3" for="numb">Telefon:</label>
+                    <label class="control-label col-sm-3" for="numb">Telefon<span>*</span></label>
                     <div class="col-sm-9">
                       <input type="text" name="phone" class="form-control" id="numb" placeholder="Şəxsin telefon nömrəsi">
                     </div>
 
 
-                    <label class="control-label col-sm-3" for="mail">Email:</label>
+                    <label class="control-label col-sm-3" for="mail">Email<span>*</span></label>
                     <div class="col-sm-9">
                       <input type="email" name="email" class="form-control" id="mail" placeholder="Şəxsin elektron ünvanı">
                     </div>
 
-                    <label class="control-label col-sm-3" for="nov">Növ:</label>
+                    <label class="control-label col-sm-3" for="nov">Növ<span>*</span></label>
                     <div class="col-sm-9">
-                      <input type="text" name="nov" class="form-control" id="nov" placeholder="Dəstəyin növü">
+                      <input type="text" name="nov" class="form-control" id="nov" placeholder="Dəstəyin nəyə olduğunu bildirin.Məsələn, məktəb,ev və s.">
                     </div>
 
                     <!-- </div> -->
@@ -82,7 +82,6 @@
                       <input type="submit" name="kaydet" value="Qeyd Et" class="btn">
                     </div>
                   </form>
-                </div>
               </div>
           </div>
       </div>
