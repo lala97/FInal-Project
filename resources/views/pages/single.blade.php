@@ -6,7 +6,7 @@
       <ul>
           <li class="pull-left"> <h1>Mənim <span>İstəyim</span></h1></li>
           <li class="pull-right">
-               <a href="index.php">ANA SƏHİFƏ / </a>
+               <a href="{{url('/')}}">ANA SƏHİFƏ / </a>
               <a href="{{url('/istek')}}"> İSTƏK</a>
           </li>
       </ul>

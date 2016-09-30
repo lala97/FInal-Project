@@ -43,13 +43,13 @@
 																	<th>Tənzimləmə</th>
 	                            	</tr>
 	                            	@foreach($istekler as $istek)
-	                            		@if($istek->status == '1' && $istek->user_id = Auth::user()->id && $istek->type_id == '2')
+	                            		@if($istek->status == '1' && $istek->user_id == Auth::user()->id && $istek->type_id == '2')
 	                            			<tr>
 	                            				<td>{{$istek->title}}</td>
 																			<td>{{substr($istek->about,0,100)}}...</td>
 	                            				<td><img class="img-responsive" src="{{url('image/'.$istek->image)}}"></td>
 	                            				<td><a class="btn btn-danger" href="{{url('/isteksil/'.$istek->id)}}">Sil</a>
-																		    	<a class="btn btn-info" href="{{url('/single/'.$istek->id)}}">Oxu</a></td>
+																<a class="btn btn-info" href="{{url('/single/'.$istek->id)}}">Oxu</a></td>
 	                            			</tr>
 	                            			@else
 	                            			{{-- <tr>
