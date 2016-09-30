@@ -48,7 +48,7 @@
                                                     <td><img src="{{url("image/$destek->image")}}"</>
                                                     <td>
                                                       <a class="btn btn-primary" href="{{url('/single/'.$destek->id)}}">Bax</a>
-                                                      <a class="btn btn-danger" href="{{url('/desteksil/'.$destek->id)}}">Sil</a>
+                                                      <a class="btn btn-danger" href="{{url('/desteksil/'.$destek->id)}}">Sil</a
                                                     </td>
                                                 </tr>
                                             @endif

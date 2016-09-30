@@ -31,6 +31,7 @@ Route::get('/test/{id}',function($id)
 });
 
 Route::get('/', 'PagesController@index');
+Route::post('/', 'PagesController@index');
 
 Route::get('/istek', 'IstekController@show');
 

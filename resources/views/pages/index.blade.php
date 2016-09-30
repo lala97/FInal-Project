@@ -9,8 +9,9 @@
     <div class="container">
       <div class="row">
         <!-- Listlər inline olaraq yazılıb -->
-          <form class="form-inline" action="index.html" method="POST">
+          <form class="form-inline" action="{{url('/')}}" method="POST">
             <div class="form-group col-lg-4 col-md-4 col-sm-4">
+               {{csrf_field()}}
               <input type="text" class="form-control" name="keyword" placeholder="Açar söz">
             </div>
             <div class="form-group col-lg-3 col-md-3 col-sm-3"> <!--Şəhər inputu nisbətən kiçikdi. -->
@@ -67,7 +68,6 @@
       </div>
     </div>
   </section>
- {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initMap"async defer></script> --}}
  <script type="text/javascript" src="scripts/main.js"></script>
 
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
@@ -108,10 +108,7 @@
               return new google.maps.Marker({
                   position: location,
                   title:myLatLng[i].title,
-                  // label: labels[i],
                   icon: 'https://lh3.googleusercontent.com/NU7oZ7XSozdZYdGnZs_64cn0U6hwrkKNfAr-cqFScO40nEgyIcRtvXuzSAZQn_9VqsY=w40',
-
-                  id: i,
                   animation: google.maps.Animation.DROP
               });
 

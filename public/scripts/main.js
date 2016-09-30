@@ -6,21 +6,61 @@
 
     });
   });
-
-
-
-
-//index sehifesinde map ucun
-
-// function initMap() {
-// var map = new google.maps.Map(document.getElementById('infoMap'), {
-//   center: {  lat: 40.100,lng: 48.800},
-//    zoom: 8
-//  });
-// }
-
-
-
+$(document).ready(function() {
+   //=========Form üçün Enter disabled eləmək üçün kod======================================
+     $("form").bind("keypress", function(e) {
+      if (e.keyCode == 13) {
+          return false;
+      };
+ });
+});
+$(document).ready(function() {
+   var error = true;
+   $('form').submit(function() {
+     if ($('#lat').val()=="" && $('#lng').val()=="") {
+         $('#adres').css("border-color","#ff0000");
+            $('.LatLng').text('Xahiş olunur ünvani düzgün qeyd edin!');
+         error = false;
+     }else if ($('#head').val()=="") {
+         $('#head').css("border-color","#ff0000");
+         $('.head').text('Xahiş olunur boşluq buraxmayın!');
+         error = false;
+     }else if ($('#adres').val()=="") {
+         $('#adres').css("border-color","#ff0000");
+         $('.adres').text('Xahiş olunur boşluq buraxmayın!');
+         error = false;
+     }else if ($('#org').val()=="") {
+         $('#org').css("border-color","#ff0000");
+         $('.teskilat').text('Xahiş olunur boşluq buraxmayın!');
+         error = false;
+     }else if ($('#aciq').val()=="") {
+         $('#aciq').css("border-color","#ff0000");
+         $('.aciq').text('Xahiş olunur boşluq buraxmayın!');
+         error = false;
+     }else if ($('#pic').val()=="") {
+         $('#pic').css("border-color","#ff0000");
+         $('.pic').text('Xahiş olunur boşluq buraxmayın!');
+         error = false;
+     }else if ($('#name').val()=="") {
+         $('#name').css("border-color","#ff0000");
+         $('.name').text('Xahiş olunur boşluq buraxmayın!');
+         error = false;
+     }else if ($('#numb').val()=="") {
+         $('#numb').css("border-color","#ff0000");
+         $('.numb').text('Xahiş olunur boşluq buraxmayın!');
+         error = false;
+     }else if ($('#mail').val()=="") {
+         $('#mail').css("border-color","#ff0000");
+         $('.mail').text('Xahiş olunur boşluq buraxmayın!');
+         error = false;
+     }else if ($('#nov').val()=="") {
+         $('#nov').css("border-color","#ff0000");
+         $('.nov').text('Xahiş olunur boşluq buraxmayın!');
+         error = false;
+     }
+     return error;
+   });
+});
 
 // destek sehifesinde map ucun
 function initAutocomplete() {
