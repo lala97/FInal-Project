@@ -53,6 +53,7 @@ class IstekController extends Controller
       $data = [
             'type_id'=>'2',
             'title'=>$req->title,
+            'view' => '0',
             'about'=>$req->about,
             'location'=>$req->location,
             'lat'=>$req->lat,
@@ -62,7 +63,8 @@ class IstekController extends Controller
             'email'=>$req->email,
             'image'=>$filename,
             'org'=>$req->org,
-            'nov'=>$req->nov
+            'nov'=>$req->nov,
+            'deadline'=>$req->date
           ];
 
        Auth::user()->elanlar()->create($data);

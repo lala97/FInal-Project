@@ -1,6 +1,17 @@
 @extends('pages.layout')
 
 @section('content')
+  <section id="istek">
+      <div class="container">
+      <ul>
+          <li class="pull-left"> <h1>İstəklər</span></h1></li>
+          <li class="pull-right">
+               <a href="{{url('/')}}">ANA SƏHİFƏ / </a>
+              <a href="{{url('/istek')}}"> YENİ İSTƏK</a>
+          </li>
+      </ul>
+      </div>
+  </section>
   <section id="destek_olanlar">
      <div class="container-fluid">
         <div class="row">

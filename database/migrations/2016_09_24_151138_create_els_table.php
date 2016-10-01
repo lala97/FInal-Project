@@ -19,6 +19,7 @@ class CreateElsTable extends Migration
            $table->foreign('type_id')->references('id')->on('elantypes');
            $table->string('title');
            $table->boolean('status');
+           $table->integer('view');
            $table->text('about');
            $table->string('location');
            $table->string('lat');  // yeniii
@@ -29,6 +30,7 @@ class CreateElsTable extends Migration
            $table->string('image');
            $table->string('org');  //yenii
            $table->string('nov'); //yeniii
+           $table->date('deadline'); //yeniii
            $table->timestamps();
         });
     }

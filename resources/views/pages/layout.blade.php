@@ -17,12 +17,12 @@ use App\City;
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-              <!-- Email və əlaqə nömrəsi (solda)-->
+              <!-- Email və əlaqə nömrəsi -->
 
                 <ul class="list-inline pull-left margin0 padding0">
-                    <li><a href="mailto:info@testwebsite.com"><h6 class="pull-left margin0">testwebsite@gmail.com</h6></a></li>
+                    <li><a href="mailto:info@testwebsite.com"><h6 class="pull-left margin0">alfagen4@gmail.com</h6></a></li>
                 </ul>
-                <!-- Social fontawesome iconlar (sağda) -->
+                <!-- Social fontawesome iconlar-->
                 <ul class="list-inline pull-right margin0 padding0">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -45,11 +45,12 @@ use App\City;
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                    <!-- navbar-brand şəkil olaraq yüklənir -->
+
+                    <!-- Logo -->
                 <a class="navbar-brand" href="{{url('/')}}"><img src="{{url('image/logo.png')}}" alt="logo" /></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-              <!-- Səhifə adları -->
+              <!-- Navbar  Menu -->
                 <ul class="nav navbar-nav">
                     <li><a {{Request::is('/') ? "class=active" : ''}} href="{{url('/')}}"><i class="fa fa-home"></i> Ana Səhİfə</a></li>
                     <li><a {{Request::is('istek') ? "class=active" : ''}} href="{{url('/istek')}}"><i class="fa fa-map-marker"></i> İstək əlavə et</a></li>
@@ -57,15 +58,7 @@ use App\City;
                     <li><a {{Request::is('haqqimizda') ? "class=active" : ''}} href="{{url('/haqqimizda')}}"><i class="fa fa-info-circle"></i> Haqqımızda</a></li>
                     <li><a {{Request::is('elaqe') ? "class=active" : ''}} href="{{url('/elaqe')}}"><i class="fa fa-phone"></i> Əlaqə</a></li>
                 </ul>
-                <!-- Qeydiyyat və giriş hissəsi  -->
-                  {{-- @if(Auth::guest())
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{{url('/register')}}"><i class="fa fa-user-plus"></i> Qeydiyyat</a></li>
-                        <li><a href="{{url('/login')}}"><i class="fa fa-sign-in"></i> Daxil ol</a></li>
-                    </ul>
-                  @else
 
-                  @endif --}}
                   <ul class="nav navbar-nav navbar-right">
                       <!-- Authentication Links -->
                       @if (Auth::guest())

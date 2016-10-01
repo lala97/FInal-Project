@@ -28,6 +28,17 @@
               </div>
               <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                 <h1 class="text-center">{{$single->title}}</h1>
+                  <p class="text-right">
+                  </p>
+                  @if(!$diff->d == 0 && $diff->m == 0)
+                    <p class="text-right">
+                    İstəyin müddəti: {{$diff->d}} gün
+                  </p>
+                @else
+                  <p class="text-right">
+                  İstəyin müddəti: {{$diff->m}} ay {{$diff->d}} gün
+                </p>
+              @endif
                 <p class="text-justify">{{$single->about}}</p>
               </div>
           </div>

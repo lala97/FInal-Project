@@ -39,27 +39,45 @@
       </div>
     </div>
   </section>
-  <!-- GOOGLEMAP SECTION END -->
+  <!-- GOOGLEMAP SECT ION END -->
 
   <section id="news">
     <div class="container">
       <div class="row">
-          @foreach($datas as $data)
-            @if($data->status=='1'&& $data->type_id=='2')
-                   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                    <div class="thumbnail">
-                      <a href="{{url('/single/'.$data->id)}}"><img src="{{url('/image/'.$data->image)}}" alt="News Image"></a>
-                      <div class="caption">
-                        <div class="caption-title"><h3>{{$data->title}}</h3></div>
-                        <div class="caption-content">
-                          <p>{{substr($data->about, 0,150)}}...</p>
-                        </div>
-                        <p><a href="{{url('/single/'.$data->id)}}" class="btn center-block" role="button">Ətraflı</a></p>
-                      </div>
-                  </div>
-                </div>
+        @foreach($datas as $data)
+          @if($data->status=='1' && $data->type_id=='2')
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="fadeIn">
+                    <div class="row">
+                        <h5>{{$data->title}}</h5>
+                    </div>
+                    <div class="row">
+                        <a href="{{url('/single/'.$data->id)}}"><img src="{{url('/image/'.$data->image)}}" alt="News Image"></a>
+                    </div>
+                    <div class="row">
+                      <p class="about">{{substr($data->about, 0,150)}}...</p>
+                      <i class="fa fa-eye" aria-hidden="true"> {{$data->view}}</i>
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                      <?php
+                      $dbdate=new DateTime($data->deadline);
+                      $newdate=new DateTime('now');
+                      $diff = date_diff($newdate,$dbdate);
+                       ?>
+                  @if(!$diff->d == 0 && $diff->m == 0)
+                   {{$diff->d}} gün
+                @elseif($diff->d == 0 && !$diff->m == 0)
+                 {{$diff->m}} ay
+               @else
+                    {{$diff->d}} gün  {{$diff->m}} ay
               @endif
-          @endforeach
+                      <a href="{{url('/single/'.$data->id)}}" class="btn pull-right" role="button">Ətraflı
+                      <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+          @endif
+        @endforeach
     </div>
       <div class="row">
         <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
@@ -80,10 +98,9 @@
          @if($datamap->status=='1')
             {lat: {{$datamap->lat}},
             lng:{{$datamap->lng}},
-            title:"<b>{{$datamap->title}}</b><br> <img style='width:200px;height:150px' src='{{url('image/'.$data->image)}}'><br><b>{{$datamap->created_at}}</b><a href='{{url('/single/'.$datamap->id)}}' class='btn pull-right'>Ətraflı</a>"
+            title:"<b>{{$datamap->title}}</b><br> <img style='width:200px;height:150px' src='{{url('image/'.$data->image)}}'><br><a href='{{url('/single/'.$datamap->id)}}' class='btn pull-right'>Ətraflı</a>"
           },
           @endif
-
       @endforeach
       ];
 

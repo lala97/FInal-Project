@@ -39,11 +39,10 @@
                         <input name="location" type="text" class="form-control" id="adres" placeholder="İstəyinizin və ya yaşadığınız yerin ünvanı"><span class="adres"></span><span class="LatLng"></span>
                       </div>
 
-                      <label class="control-label col-sm-3" for="qurum">Təşkilat adı <span>*</span></label>
+                      <label class="control-label col-sm-3" for="org">Təşkilat adı <span>*</span></label>
                       <div class="col-sm-9">
                         <input name="org" type="text" class="form-control" id="org" placeholder="Əgər varsa təşkilat,universitet və s daxil edin."><span class="org"></span>
                       </div>
-
 
                     <label class="control-label col-sm-3" for="aciq">Açıqlama<span>*</span></label>
                     <div class="col-sm-9">
@@ -58,18 +57,18 @@
 
                     <label class="control-label col-sm-3" for="name">Ad , Soyad<span>*</span></label>
                     <div class="col-sm-9">
-                      <input type="text" name="name" class="form-control" id="name" placeholder="İstək məsələsində əlaqə qurulacaq şəxs"><span class="name"></span>
+                      <input type="text" name="name" class="form-control" id="name" placeholder="İstək məsələsində əlaqə qurulacaq şəxs" value="{{Auth::user()->name}}"><span class="name"></span>
                     </div>
 
                     <label class="control-label col-sm-3" for="numb">Telefon<span>*</span></label>
                     <div class="col-sm-9">
-                      <input type="text" name="phone" class="form-control" id="numb" placeholder="Şəxsin telefon nömrəsi"><span class="numb"></span>
+                      <input type="text" name="phone" class="form-control" id="numb" placeholder="Şəxsin telefon nömrəsi" value="{{Auth::user()->phone}}"><span class="numb"></span>
                     </div>
 
 
                     <label class="control-label col-sm-3" for="mail">Email<span>*</span></label>
                     <div class="col-sm-9">
-                      <input type="email" name="email" class="form-control" id="mail" placeholder="Şəxsin elektron ünvanı"><span class="mail"></span>
+                      <input type="email" name="email" class="form-control" id="mail" placeholder="Şəxsin elektron ünvanı" value="{{Auth::user()->email}}"><span class="mail"></span>
                     </div>
 
                     <label class="control-label col-sm-3" for="nov">Növ<span>*</span></label>
@@ -77,7 +76,11 @@
                       <input type="text" name="nov" class="form-control" id="nov" placeholder="Dəstəyin nəyə olduğunu bildirin.Məsələn, məktəb,ev və s."><span class="nov"></span>
                     </div>
 
-                    <!-- </div> -->
+                    <label class="control-label col-sm-3" for="date">İstəyinizin müddəti<span>*</span></label>
+                    <div class="col-sm-9">
+                      <input name="date" type="date" class="form-control" id="date">
+                    </div>
+
                     <div class="col-sm-2 col-sm-offset-3">
                       <input type="submit" name="kaydet" value="Qeyd Et" class="btn">
                     </div>
@@ -86,7 +89,9 @@
           </div>
       </div>
   </section>
-  <script type="text/javascript" src="/scripts/main.js"></script>
+  <script src="{{url('/scripts/vendors/jquery.js')}}"></script>
+
+  <script type="text/javascript" src="{{url('/scripts/main.js')}}"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAanmTrOlQYWRepobnwqSO1E2SOoHYMRBA&libraries=places&callback=initAutocomplete"
          async defer></script>
 @endsection

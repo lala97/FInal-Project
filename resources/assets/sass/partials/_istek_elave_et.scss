@@ -58,7 +58,7 @@
       margin-top: 20px;
     }
 
-    input[type="text"], input[type="file"], input[type="email"], select{
+    input[type="text"], input[type="file"],input[type="date"], input[type="email"], select{
         margin-top: 20px;
         height: 42px;
     }
@@ -69,5 +69,13 @@
     }
     .thumbnail{
       height: 500px;
+      img{
+        height:20em;
+      }
+      // .caption{
+      //   p{
+      //     word-break: break-all;
+      //   }
+      // }
     }
 }

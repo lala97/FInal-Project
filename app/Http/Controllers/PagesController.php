@@ -9,14 +9,24 @@ use App\City;
 use App\Elan;
 use App\User;
 use Auth;
-
+use DateTime;
 
 class PagesController extends Controller
 {
   public function index()
   {
-      $datas=Elan::paginate(4);
+      $datas=Elan::orderBy('created_at','desc')->take(4)->get();
       $datamaps=Elan::all();
+      foreach ($datamaps as $check_date) {
+      $dbdate=new DateTime($check_date->deadline);
+      $newdate=new DateTime('now');
+      $diff = date_diff($newdate,$dbdate);
+      if ($diff->d == 0 && $diff->m==0) {
+        $check_date->status = 0;
+        $check_date->update();
+      }
+    }
+
       return view('pages.index',compact('datas','datamaps'));
   }
 
@@ -29,18 +39,32 @@ class PagesController extends Controller
     }
 
     public function single($id){
-      $single = Elan::find($id);
-      return view('pages.single',compact('single'));
+        $single = Elan::find($id);
+        $single->view = $single->view+1;
+        $date = $single->deadline;
+        $dbdate=new DateTime($date);
+        $newdate=new DateTime('now');
+        $diff = date_diff($newdate,$dbdate);
+        if (!$diff->d== 0) {
+          $single->update();
+        }
+        elseif ($diff->d == 0 && $diff->m) {
+        $single->status = 0;
+        $single->save();
+        return redirect('/');
+      }
+
+      return view('pages.single',compact('single','diff'));
     }
 
-    public function desteklist()  //yeni
+    public function desteklist()
     {
-      $desteklist=Elan::paginate(24);
+      $desteklist=Elan::paginate(6);
       return view('pages.ds',compact('desteklist'));
     }
-        public function isteklist()  //yeni
+        public function isteklist()
     {
-      $isteklist=Elan::paginate(6);
+      $isteklist=Elan::paginate(2);
       return view('pages.isteklist',compact('isteklist'));
     }
      public function profil(){

@@ -12,7 +12,7 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Adınız</label>
+                            <label for="name" class="col-md-4 control-label">Adınız Soyadınız</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
@@ -39,7 +39,7 @@
                             <label for="phone" class="col-md-4 control-label">Telefon Nömrəsi</label>
                             <div class="col-md-6">
 
-                              <input id="phone" type="text" class="form-control" name="phone">
+                              <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}">
                               @if ($errors->has('phone'))
                                   <span class="help-block">
                                       <strong>{{ $errors->first('phone') }}</strong>
@@ -66,15 +66,76 @@
                             <label for="city" class="col-md-4 control-label">Şəhər/Rayon</label>
 
                             <div class="col-md-6">
-                                <input id="city" type="text" class="form-control" name="city">
-                                 {{-- <select  class="	form-control"  name="city">
-                                  @foreach($city as $city)
-                                    <option id="{{$city->id}}">
-                                      {{$city->name}}
-                                    </option>
-                                  @endforeach
-
-                                </select> --}}
+                                <input id="city" type="text" class="hidden" name="city">
+                                <select id="seherler" class="form-control"  name="city">
+                                             <option value="Baki">Baki</option>
+                                             <option value="Abşeron">Abşeron</option>
+                                             <option value="Ağdam">Ağdam</option>
+                                             <option value="Ağdaş">Ağdaş</option>
+                                             <option value="Avalueabədi">Ağcabədi</option>
+                                             <option value="Ağstafa">Ağstafa</option>
+                                             <option value="Ağsu">Ağsu</option>
+                                             <option value="Astara">Astara</option>
+                                             <option value="Babək">Babək</option>
+                                             <option value="Balakən">Balakən</option>
+                                             <option value="Bərdə">Bərdə</option>
+                                             <option value="Beyləqan">Beyləqan</option>
+                                             <option value="Biləsuvar">Biləsuvar</option>
+                                             <option value="Cəbrayıl">Cəbrayıl</option>
+                                             <option value="Cəlilabad">Cəlilabad</option>
+                                             <option value="Culfa">Culfa</option>
+                                             <option value="Daşkəsən">Daşkəsən</option>
+                                             <option value="Füzuli">Füzuli</option>
+                                             <option value="Gədəbəy">Gədəbəy</option>
+                                             <option value="Goranboy">Goranboy</option>
+                                             <option value="Göyçay">Göyçay</option>
+                                             <option value="Göygöl">Göygöl</option>
+                                             <option value="Hacıqabul">Hacıqabul</option>
+                                             <option value="Xaçmaz">Xaçmaz</option>
+                                             <option value="Xızı">Xızı</option>
+                                             <option value="Xocalı">Xocalı</option>
+                                             <option value="Xocavənd">Xocavənd</option>
+                                             <option value="İmişli">İmişli</option>
+                                             <option value="İsmayıllı">İsmayıllı</option>
+                                             <option value="Kəlbəcər">Kəlbəcər</option>
+                                             <option value="Kəngərli">Kəngərli</option>
+                                             <option value="Kürdəmir">Kürdəmir</option>
+                                             <option value="Qəbələ">Qəbələ</option>
+                                             <option value="Qax">Qax</option>
+                                             <option value="Qazax">Qazax</option>
+                                             <option value="Qobustan">Qobustan</option>
+                                             <option value="Quba">Quba</option>
+                                             <option value="Qubadlı">Qubadlı</option>
+                                             <option value="Qusar">Qusar</option>
+                                             <option value="Laçın">Laçın</option>
+                                             <option value="Lənkəran">Lənkəran</option>
+                                             <option value="Lerik">Lerik</option>
+                                             <option value="Masallı">Masallı</option>
+                                             <option value="Neftçala">Neftçala</option>
+                                             <option value="Oğuz">Oğuz</option>
+                                             <option value="Ordubad">Ordubad</option>
+                                             <option value="Saatlı">Saatlı</option>
+                                             <option value="Sabirabad">Sabirabad</option>
+                                             <option value="Sədərək">Sədərək</option>
+                                             <option value="Salyan">Salyan</option>
+                                             <option value="Samux">Samux</option>
+                                             <option value="Şabran">Şabran</option>
+                                             <option value="Şahbuz">Şahbuz</option>
+                                             <option value="Şəki">Şəki</option>
+                                             <option value="Şamaxı">Şamaxı</option>
+                                             <option value="Şəmkir">Şəmkir</option>
+                                             <option value="Şərur">Şərur</option>
+                                             <option value="Şuşa">Şuşa</option>
+                                             <option value="Siyəzən">Siyəzən</option>
+                                             <option value="Tərtər">Tərtər</option>
+                                             <option value="Tovuz">Tovuz</option>
+                                             <option value="Ucar">Ucar</option>
+                                             <option value="Yardımlı">Yardımlı</option>
+                                             <option value="Yevlax">Yevlax</option>
+                                             <option value="Zəngilan">Zəngilan</option>
+                                             <option value="Zaqatala">Zaqatala</option>
+                                             <option value="Zərdab">Zərdab</option>
+                                       </select>
                                 @if ($errors->has('city'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('city') }}</strong>

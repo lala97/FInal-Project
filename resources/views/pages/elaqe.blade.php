@@ -28,7 +28,7 @@
             <i class="fa fa-map-marker fa-2x"></i> <i>AF Business House, 3cü mərtəbə </i>
           </p>
           <p>
-            <i class="fa fa-envelope-o fa-2x"></i> <i> testwebsite@gmail.com</i>
+            <i class="fa fa-envelope-o fa-2x"></i> <i> alfagen4@gmail.com</i>
           </p>
           <p>
             <i class="fa fa-phone fa-2x"></i> <i> +994877881254646</i>

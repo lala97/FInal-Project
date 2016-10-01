@@ -24,11 +24,6 @@ Route::group(['middleware' => 'admin'],function(){
   Route::post('/alfagen/postLogin', 'AdminController@postLogin');
   Route::get('/alfagen/logout', 'AdminController@logout');
 });
-Route::get('/test/{id}',function($id)
-{
-      $data=Elan::find($id);
-      return $data->qarsiliqlar;
-});
 
 Route::get('/', 'PagesController@index');
 Route::post('/', 'PagesController@index');
@@ -37,13 +32,13 @@ Route::get('/istek', 'IstekController@show');
 
 Route::post('/istek', 'IstekController@store');
 
-Route::get('/isteksil/{id}', 'IstekController@delete'); //yeni
+Route::get('/isteksil/{id}', 'IstekController@delete');
 
 Route::get('/destek', 'DestekController@show');
 
 Route::post('/destek', 'DestekController@store');
 
-Route::get('/desteksil/{id}', 'DestekController@delete'); //yeni
+Route::get('/desteksil/{id}', 'DestekController@delete');
 
 Route::get('/haqqimizda', 'PagesController@haqqimizda');
 
@@ -51,7 +46,7 @@ Route::get('/profil', 'PagesController@profil');
 
 Route::post('/profil', 'PagesController@update');
 
-Route::post('/avatar', 'PagesController@avatar');//yeniii
+Route::post('/avatar', 'PagesController@avatar');
 
 Route::get('/desteklerim', 'DestekController@desteklerim');
 
@@ -63,11 +58,9 @@ Route::get('/single/{id}', 'PagesController@single');
 
 Route::get('/desteksiyahisi', 'PagesController@desteklist');
 
-Route::get('/isteksiyahisi', 'PagesController@isteklist'); //istek list olmalidi yeqin.
+Route::get('/isteksiyahisi', 'PagesController@isteklist');
 
 Route::auth();
-
-//admin part
 
 Route::get('/lists', 'AdminController@lists');
 
