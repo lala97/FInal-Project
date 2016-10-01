@@ -54,7 +54,6 @@
         });
         marker = new google.maps.Marker({
          map: map,
-         draggable: true,
          animation: google.maps.Animation.DROP,
          position: {lat: 40.37743150000001, lng: 49.85410260000003}
       });

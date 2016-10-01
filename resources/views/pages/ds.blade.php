@@ -17,7 +17,7 @@
                     <h2>{{$destek->title}}</h2>
                     <p>{{$destek->about}}</p>
                     <h4><b>Ünvan:</b>{{$destek->location}}</h4>
-                    <a class="btn btn-info" href="{{URL('single')}}">Ətraflı</a>
+                    <a class="btn btn-info" href="{{url('single')}}">Ətraflı</a>
                  </div>
               </div>
            </div>

@@ -8256,6 +8256,20 @@ button.close {
   background-color: #0099ff;
   color: white; }
 
+#destek_olanlar .list {
+  margin: 5%;
+  min-height: 250px;
+  border-bottom: 1px solid lightgray;
+  overflow: hidden; }
+  #destek_olanlar .list img {
+    height: 150px; }
+  #destek_olanlar .list a {
+    background: white;
+    color: black;
+    margin-top: 3em; }
+  #destek_olanlar .list .list:hover {
+    background: blue; }
+
 #singlePage {
   margin: 40px 0px; }
   #singlePage h1 {

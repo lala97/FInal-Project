@@ -15,7 +15,7 @@ class PagesController extends Controller
 {
   public function index()
   {
-      $datas=Elan::paginate(8);
+      $datas=Elan::paginate(4);
       $datamaps=Elan::all();
       return view('pages.index',compact('datas','datamaps'));
   }
@@ -40,7 +40,7 @@ class PagesController extends Controller
     }
         public function isteklist()  //yeni
     {
-      $isteklist=Elan::paginate(24);
+      $isteklist=Elan::paginate(6);
       return view('pages.isteklist',compact('isteklist'));
     }
      public function profil(){

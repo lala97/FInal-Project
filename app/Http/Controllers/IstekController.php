@@ -29,7 +29,7 @@ class IstekController extends Controller
     return view('pages.profilqeyd',compact('istekler'));
     }
 
-     public function delete($id) //yeniiiiiiiiiiiiiiiiiii  gunel
+     public function delete($id)
       {
         $isteksil=Elan::find($id);
         $isteksil->delete();
@@ -51,7 +51,7 @@ class IstekController extends Controller
       $req->file('image')->move(public_path('image'),$filename);
 
       $data = [
-            'type_id'=>'2', //yeni gunel
+            'type_id'=>'2',
             'title'=>$req->title,
             'about'=>$req->about,
             'location'=>$req->location,
