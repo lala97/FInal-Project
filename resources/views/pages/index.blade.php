@@ -39,43 +39,48 @@
       </div>
     </div>
   </section>
-  <!-- GOOGLEMAP SECT ION END -->
+  <!-- GOOGLEMAP SECTION END -->
 
   <section id="news">
     <div class="container">
       <div class="row">
         @foreach($datas as $data)
           @if($data->status=='1' && $data->type_id=='2')
+            <?php
+            $dbdate=new DateTime($data->deadline);
+            $newdate=new DateTime('now');
+            $diff = date_diff($newdate,$dbdate);
+            ?>
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="fadeIn">
-                    <div class="row">
-                        <h5>{{$data->title}}</h5>
-                    </div>
-                    <div class="row">
-                        <a href="{{url('/single/'.$data->id)}}"><img src="{{url('/image/'.$data->image)}}" alt="News Image"></a>
-                    </div>
-                    <div class="row">
-                      <p class="about">{{substr($data->about, 0,150)}}...</p>
-                      <i class="fa fa-eye" aria-hidden="true"> {{$data->view}}</i>
-                      <i class="fa fa-calendar" aria-hidden="true"></i>
-                      <?php
-                      $dbdate=new DateTime($data->deadline);
-                      $newdate=new DateTime('now');
-                      $diff = date_diff($newdate,$dbdate);
-                       ?>
-                  @if(!$diff->d == 0 && $diff->m == 0)
-                   {{$diff->d}} gün
-                @elseif($diff->d == 0 && !$diff->m == 0)
-                 {{$diff->m}} ay
-               @else
-                    {{$diff->d}} gün  {{$diff->m}} ay
-              @endif
-                      <a href="{{url('/single/'.$data->id)}}" class="btn pull-right" role="button">Ətraflı
-                      <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
+             <div class="thumbnail">
+               <div class="caption-title"><h3>{{$data->title}}</h3></div>
+               <a href="{{url('/single/'.$data->id)}}"><img src="{{url('/image/'.$data->image)}}" alt="News Image"></a>
+               <div class="caption">               
+                 <div class="caption-content">
+                   <p>{{substr($data->about, 0,100)}}...</p>
+                 </div>
+                 <div class="caption-footer">
+                   <div class="col-lg-9 padding0">
+                     <p class="pull-left"><i class="fa fa-eye" aria-hidden="true"></i>{{$data->view}}</p>
+                     <p class="pull-left"><i class="fa fa-calendar" aria-hidden="true"></i>
+                     @if(!$diff->d == 0 && $diff->m == 0)
+                         {{$diff->d}} gün</p>
+                     @elseif($diff->d == 0 && !$diff->m == 0)
+                       {{$diff->m}} ay</p>
+                     @else
+                          {{$diff->d}} gün  {{$diff->m}} ay</p>
+                     @endif
+                   </div>
+                   <div class="col-lg-3 padding0">
+                     <p><a href="{{url('/single/'.$data->id)}}" class="btn" role="button">Ətraflı</a></p>
+                   </div>
+
+                 </div>
+
+               </div>
+           </div>
+         </div>
           @endif
         @endforeach
     </div>
