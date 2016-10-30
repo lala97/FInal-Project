@@ -10,6 +10,7 @@ use App\User;
 use Auth;
 class AdminController extends Controller
 {
+  //boş construktor ?
   public function _construct()
   {
 
@@ -61,7 +62,7 @@ class AdminController extends Controller
   {
      return view('admin.index');
   }
-
+ //komment yoxdur deyə qarışıqdır, camaatın işin rahatlaşdır )
   public function desteklist()
   {
     $destekler=Elan::all();
